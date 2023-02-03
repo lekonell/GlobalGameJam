@@ -21,6 +21,10 @@ namespace GameManager {
 
 			ItemManager.Register("Player", new Item("Player", GameObject.Find("Player")));
 
+			ItemManager.Register("Player/L_Weapon", new Item("Player/L_Weapon", GameObject.Find("L_Weapon")));
+
+			ItemManager.Register("Player/R_Weapon", new Item("Player/R_Weapon", GameObject.Find("R_Weapon")));
+
 			ItemManager.Register("PlayerBaseAttackProjectile", new Item("PlayerBaseAttackProjectile", GameObject.Find("PlayerBaseAttackProjectile")));
 
 			//GameObject Objects = GameObject.Find("Objects");

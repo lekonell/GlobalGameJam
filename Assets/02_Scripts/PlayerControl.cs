@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameManager;
-using Unity.VisualScripting;
+using DG.Tweening;
 
 public class PlayerControl : MonoBehaviour {
 	private Animator animator;
@@ -25,16 +25,15 @@ public class PlayerControl : MonoBehaviour {
 		DirectionRight
 	};
 
+	private PlayerWeaponManager playerWeaponManager;
+
 	private float playerBaseAttackCooldown = 1.0f;
 	private bool isPlayerBaseAttackCooldown = false;
 	private ePlayerDirection playerDirection = ePlayerDirection.DirectionLeft;
 
 	private void Awake() {
 		animator = GetComponent<Animator>();
-	}
-
-	void Start() {
-
+		playerWeaponManager = GetComponent<PlayerWeaponManager>();
 	}
 
 	void Update() {
@@ -96,8 +95,8 @@ public class PlayerControl : MonoBehaviour {
 			return;
 		}
 		else if (Input.GetMouseButton(1)) {
-			// PlayerBaseAttack(ePlayerAttackType.AttackTypeRange);
-			// return;
+			PlayerBaseAttack(ePlayerAttackType.AttackTypeRange);
+			return;
 		}
 	}
 	
@@ -123,22 +122,29 @@ public class PlayerControl : MonoBehaviour {
 		if (isPlayerBaseAttackCooldown)
 			return;
 
-
 		switch (playerAttackType) {
 			case ePlayerAttackType.AttackTypeMelee:
+				animator.SetFloat("AttackState", 0);
+				animator.SetFloat("NormalState", 0);
 				animator.SetTrigger("Attack");
 				break;
 			case ePlayerAttackType.AttackTypeRange:
-				GameObject playerProjectile = Instantiate(ItemManager.Find("PlayerBaseAttackProjectile"), transform.position, Quaternion.identity);
+				animator.SetFloat("AttackState", 0);
+				animator.SetFloat("NormalState", 0.5f);
+				animator.SetTrigger("Attack");
 
-				playerProjectile.GetComponent<PlayerAttackManager>().SetLifespan(1.2f).SetValid(true).SetDamage(10);
+				transform.DOMove(transform.position, 0.4f).OnComplete(() => {
+					GameObject playerProjectile = Instantiate(ItemManager.Find("PlayerBaseAttackProjectile"), ItemManager.Find("Player/L_Weapon").transform.position, Quaternion.identity);
 
-				Vector2 playerPosition = transform.position;
-				Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+					playerProjectile.GetComponent<PlayerAttackManager>().SetLifespan(1.2f).SetValid(true).SetDamage(10);
 
-				Vector2 dist = (inputPosition - playerPosition).normalized;
+					Vector2 playerPosition = transform.position;
+					Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-				playerProjectile.GetComponent<Rigidbody2D>().velocity = dist * 10.0f;
+					Vector2 dist = (inputPosition - playerPosition).normalized;
+
+					playerProjectile.GetComponent<Rigidbody2D>().velocity = dist * 10.0f;
+				});
 				break;
 		}
 
