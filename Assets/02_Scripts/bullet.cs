@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameManager;
 
 public class bullet : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class bullet : MonoBehaviour
 
     void Start() 
     {
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = ItemManager.Find("Player").gameObject;
     }
 
     // Update is called once per frame
     void Update() {
-        Vector3 dir = (target.transform.position - this.transform.position).normalized;
+        Vector3 dir = (target.transform.position - transform.position).normalized;
         transform.position += dir * speed;
         
     }

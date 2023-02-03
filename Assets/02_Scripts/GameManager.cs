@@ -19,7 +19,7 @@ namespace GameManager {
 
 			isInited = true;
 
-			ItemManager.Register("Player", new Item("Player", GameObject.Find("Player")));
+			ItemManager.Register("Player", new Item("Player", GameObject.Find("UnitRoot")));
 
 			ItemManager.Register("Player/L_Weapon", new Item("Player/L_Weapon", GameObject.Find("L_Weapon")));
 
