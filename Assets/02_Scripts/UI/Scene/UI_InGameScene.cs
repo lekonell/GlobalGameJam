@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class UI_InGameScene : UI_Scene
 {
+    public bool isTest = true;
     enum Images
     {
         HP1, HP2, HP3, HP4, HP5,
@@ -42,6 +43,23 @@ public class UI_InGameScene : UI_Scene
         GetButton((int)Buttons.TestChangeWeapon).gameObject.BindEvent(OnClickChangeWeapon);
 
         UpdateUI();
+
+        if(!isTest)
+        {
+            GetButton((int)Buttons.TestNextButton).gameObject.SetActive(false);
+            GetButton((int)Buttons.TestHit).gameObject.SetActive(false);
+            GetButton((int)Buttons.TestGetGold).gameObject.SetActive(false);
+            GetButton((int)Buttons.TestChangeWeapon).gameObject.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            Managers.UI.ShowPopupUI<UI_InGamePause>();
+        }
     }
 
     public override void UpdateUI()

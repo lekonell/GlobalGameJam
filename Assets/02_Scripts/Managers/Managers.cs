@@ -32,7 +32,6 @@ public class Managers : MonoBehaviour
     void Start()
     {
         Init();
-        GM.MyStart();
     }
 
     void Update()
