@@ -21,6 +21,8 @@ namespace GameManager {
 
 			ItemManager.Register("Player", new Item("Player", GameObject.Find("Player")));
 
+			ItemManager.Register("PlayerBaseAttackProjectile", new Item("PlayerBaseAttackProjectile", GameObject.Find("PlayerBaseAttackProjectile")));
+
 			//GameObject Objects = GameObject.Find("Objects");
 			//for (int i = 0; i < Objects.transform.childCount; i++) {
 			//	GameObject ObjectsToBeRegistered = Objects.transform.GetChild(i).gameObject;
