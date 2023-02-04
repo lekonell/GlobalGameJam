@@ -8,7 +8,7 @@ namespace Manager
 {
     public class GameManager
     {
-        public int maxFloor = 2; //최대층
+        public int maxFloor = 3; //최대층
         public int currentFloor = 0; //현재층
         public int currentStage = 0; //현재던전스테이지
 
