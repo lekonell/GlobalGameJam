@@ -10,6 +10,7 @@ public class InGameScene : BaseScene
 
         SceneType = Define.Scene.InGameA;
 
+        Managers.Resource.Instantiate("MinimapCamera");
         if (!Managers.Sound.CheckBgmPlay(Managers.Sound.bgmSound.battleBgm))
         {
             Managers.Sound.Play(Managers.Sound.bgmSound.battleBgm, Define.Sound.Bgm);
