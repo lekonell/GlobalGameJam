@@ -9,7 +9,8 @@ public class EnemyManager : MonoBehaviour {
 	public enum eEnemyType {
 		EnemyMelee,
 		EnemyRange,
-		EnemyHappy
+		EnemyHappy,
+		Box,
 	};
 
 	private GameObject player = null;
@@ -54,6 +55,10 @@ public class EnemyManager : MonoBehaviour {
 				SetEnemyAttackCooldown(2.0f);
 				SetEnemyMoveSpeed(2.0f);
 				break;
+			case eEnemyType.Box:
+				SetEnemyMaxHP(1.0f);
+				SetEnemyHP(1.0f);
+				break;
 		}
 
 		return this;
@@ -85,6 +90,8 @@ public class EnemyManager : MonoBehaviour {
 	}
 
 	public void SetEnemyHP(float _enemyHp) {
+		Debug.Log("SetEnemyHP(" + _enemyHp + ")");
+
 		enemyHP = _enemyHp;
 		if (enemyHP > enemyMaxHP)
 			enemyHP = enemyMaxHP;
@@ -92,7 +99,9 @@ public class EnemyManager : MonoBehaviour {
 		if (enemyHP <= 0)
 			enemyHP = 0;
 
-		enemyHPBar.GetComponent<Image>().fillAmount = enemyHP / enemyMaxHP;
+		if (enemyType != eEnemyType.Box) {
+			enemyHPBar.GetComponent<Image>().fillAmount = enemyHP / enemyMaxHP;
+		}
 
 		if (enemyHP <= 0) {
 			Destroy(GetComponent<Rigidbody2D>());
@@ -109,7 +118,10 @@ public class EnemyManager : MonoBehaviour {
 
 	private void Start() {
 		player = ItemManager.Find("Player");
-		enemyHPBar = transform.Find("Canvas/barHP").gameObject;
+
+		if (enemyType != eEnemyType.Box) {
+			enemyHPBar = transform.Find("Canvas").Find("barHP").gameObject;
+		}
 		SetEnemyType(enemyType);
 	}
 
