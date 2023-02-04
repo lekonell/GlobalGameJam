@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &38925481 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1684839094, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -255,6 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!4 &58992517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 247311317372760376, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -326,6 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!114 &68794800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,6 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &87780533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 10923072527588675, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -582,6 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &120563072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2258005138167725161, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -648,6 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &131225693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4308756071273894430, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -714,6 +720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &147543870 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8258319320290684651, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -780,6 +787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &167178833
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &193070994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8750042294682112237, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -980,6 +989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &202764591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 147046538, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1046,6 +1056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &236390803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6394525967713452657, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1112,6 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &257735989 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5351172698262873427, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1178,6 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &281659324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1954778823087681893, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1244,6 +1257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &282502080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 442737797487496949, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1310,6 +1324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &286043677 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3438308386482481736, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1376,6 +1391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &293212267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3801105899255587616, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1442,6 +1458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &308257465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4442923752331721283, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1508,6 +1525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &326206305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2915222180526246697, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1574,6 +1592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &337690821 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 521042445, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1640,6 +1659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &350429234 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6737316744911574377, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1706,6 +1726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &350759951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1406038164, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1772,6 +1793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &353756601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1712759902680488216, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1838,6 +1860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &363995476 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3426336149741553317, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1904,6 +1927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &400046572 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2123255898221697124, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -1970,6 +1994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &426645550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6686919389567862630, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2036,6 +2061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &456370394 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6133516316526402191, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2102,6 +2128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &468520448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3197382088095873169, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2168,6 +2195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &490140583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7923929034529904498, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2234,6 +2262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,6 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &539819194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5889801315707200493, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2465,6 +2495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &560176603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3590158857491040371, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2531,6 +2562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &584590071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1037329947444549845, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2597,6 +2629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &592616833 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8750384631456806274, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2663,6 +2696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &640844229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1168386022613069838, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2729,6 +2763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &648987008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4785635879619410426, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2795,6 +2830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &660989482 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7094442043716747017, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2861,6 +2897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &665274321 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3412854146295625552, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -2927,6 +2964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &682092726 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3329145615817942843, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3018,6 +3056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &738309078 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2511833436815905977, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3084,6 +3123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &751216188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6305344277420769182, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3150,6 +3190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &771296571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6090172328790301654, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3216,6 +3257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &778510359 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2700882983314021475, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3282,6 +3324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &779053372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 977127663592468887, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3348,6 +3391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &786379974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7614569647740418517, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3414,6 +3458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &788988553 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 127666957208684824, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3480,6 +3525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &799690658 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1833638938, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3546,6 +3592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &807731176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1921227642519903174, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3612,6 +3659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &811707141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6143214964563267994, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3678,6 +3726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &824459545 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1156425824560202893, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3744,6 +3793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &826114644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6019844238178943158, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3810,6 +3860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &829906247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2940185967890619077, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3876,6 +3927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &842097520 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 986719953, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -3942,6 +3994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &854727041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 46755732816987231, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4008,6 +4061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &860654210 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3896173775196528755, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4074,6 +4128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &875517231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4994348369022099825, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4140,6 +4195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &886425668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1940602205676439779, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4206,6 +4262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &930133433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7945068604630528071, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4272,6 +4329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &965282160 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3927602810305528544, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4338,6 +4396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &966603417 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1348434535, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4404,6 +4463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &978833846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4052337220241683126, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4470,6 +4530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1021182333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 560978008558592682, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4536,6 +4597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1023129909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1703498376, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4602,6 +4664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1023201162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 140721524640530005, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4668,6 +4731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1051767293 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7231557499765409764, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -4734,6 +4798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1061667764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4946,6 +5011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1110688635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1326180421, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5012,6 +5078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1113168962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3370772759673083932, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5078,6 +5145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1152031147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2569263139650033970, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5144,6 +5212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1152423110 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1275842724690571499, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5210,6 +5279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1213604396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7653494005297174058, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5276,6 +5346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1218186738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1134027624, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5342,6 +5413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1220825035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 531894897, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5408,6 +5480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1226503077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3387248964661980817, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5474,6 +5547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1236156868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2118275834, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5540,6 +5614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1249563578 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 147291934, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5606,6 +5681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1252472344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1387653866214473341, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5672,6 +5748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1252505733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1358791137558050326, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5738,6 +5815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1253742304 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1488429912, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5804,6 +5882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1258816968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2615182131122763205, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5870,6 +5949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1269241681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1500513034, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -5936,6 +6016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1304638953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3656351703107356289, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6002,6 +6083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1311532964 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3479404093601060480, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6068,6 +6150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1311785138 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 428160617839783722, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6134,6 +6217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1336304754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5019001610466473544, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6200,6 +6284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1338676008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1337094712, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6266,6 +6351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1366225176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7934721701187676153, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6332,6 +6418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1398051866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 526936720, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6398,6 +6485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1438804637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7160908755060157997, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6464,6 +6552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1447131918 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1799035103, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6530,6 +6619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1451747473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1515648602, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6596,6 +6686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1451766540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4186916150069988496, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6662,6 +6753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1454125942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 305455566340483934, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6728,6 +6820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1463669639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 453673737, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6794,6 +6887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1475450244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3920880981098491987, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6860,6 +6954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1487651389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8373289577723463368, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6926,6 +7021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1489901198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1693826975, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -6992,6 +7088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1533324618 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2018875050698311013, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7058,6 +7155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1539533452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2776775132044447730, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7124,6 +7222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1557982610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6173624346824106217, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7190,6 +7289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1617777144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7734969058587686765, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7256,6 +7356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1636666441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3652080569602223634, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7322,6 +7423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1639437395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1320978056164136350, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7388,6 +7490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1648542928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2656178805796590884, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7454,6 +7557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1659405909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 293076910, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7520,6 +7624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1663263263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2009644474, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7586,6 +7691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1681307673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4117677810349033785, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7652,6 +7758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1706446362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5698728915122157460, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7718,6 +7825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1751952768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4540657066375437289, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7784,6 +7892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1753867007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8265825945083196527, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7850,6 +7959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1769851464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1315322184032207799, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7916,6 +8026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1772513370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1164165216, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -7982,6 +8093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1773697554 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1995628046721612608, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8048,6 +8160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1811629842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 157635655, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8114,6 +8227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1827292675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8566013542702796198, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8180,6 +8294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1864598954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6656441637031552515, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8246,6 +8361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1867692117 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1357270471, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8312,6 +8428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1870856107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3178724902681670846, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8378,6 +8495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1879387511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3441424706631088278, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8444,6 +8562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1888733823 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4857300813139548632, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8510,6 +8629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1901425589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1964309088, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8576,6 +8696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1908373584 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1029547588, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8642,6 +8763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1919508104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1716275783673173175, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8708,6 +8830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1921544082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2655490606718068094, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8774,6 +8897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1922057925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7119272687528274368, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8840,6 +8964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1933794414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7407402596065575478, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8906,6 +9031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &1962539474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4743252462346293461, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -8972,6 +9098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &2007051099 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8330991202313663734, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -9038,6 +9165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &2016543922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4557394040313155376, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -9104,6 +9232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &2026413960 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6409349856762259373, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -9170,6 +9299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &2034849817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6086847547750776330, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -9236,6 +9366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &2084423032 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6075600876184075882, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -9302,6 +9433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &2117639700 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1826017509, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -9368,6 +9500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &2138395697 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4009160473056412363, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -9434,6 +9567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!1 &2146272194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7923544836229301558, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
@@ -9500,6 +9634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   isDead: 0
+  enemyDirection: 0
 --- !u!4 &15507366683838515
 Transform:
   m_ObjectHideFlags: 0

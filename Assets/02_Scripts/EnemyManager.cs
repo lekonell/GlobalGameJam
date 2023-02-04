@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameManager;
 using DG.Tweening;
+using static PlayerControl;
+using static EnemyManager;
 
 public class EnemyManager : MonoBehaviour {
 	public enum eEnemyType {
@@ -124,7 +126,25 @@ public class EnemyManager : MonoBehaviour {
 		}
 		SetEnemyType(enemyType);
 	}
+	public enum eEnemyDirection {
+		DirectionLeft,
+		DirectionRight
+	};
 
+	public eEnemyDirection enemyDirection = eEnemyDirection.DirectionLeft;
+
+	void UpdateDirection(eEnemyDirection updateDirection) {
+		if (enemyDirection == updateDirection)
+			return;
+
+		transform.Rotate(0, 180.0f, 0);
+		
+		if (enemyType != eEnemyType.Box) {
+			enemyHPBar.transform.Rotate(0, 180.0f, 0);
+		}
+
+		enemyDirection = updateDirection;
+	}
 	private void Update() {
 		if (player == null) {
 			player = ItemManager.Find("Player");
@@ -135,6 +155,15 @@ public class EnemyManager : MonoBehaviour {
 			return;
 
 		Vector2 dist = player.transform.position - transform.position;
+
+		if (dist.x > 0) {
+			UpdateDirection(eEnemyDirection.DirectionRight);
+		}
+		else {
+			UpdateDirection(eEnemyDirection.DirectionLeft);
+		}
+
+		dist.x = -Mathf.Abs(dist.x);
 
 		switch (enemyType) {
 			case eEnemyType.EnemyMelee:

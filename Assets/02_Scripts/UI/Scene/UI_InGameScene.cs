@@ -50,7 +50,7 @@ public class UI_InGameScene : UI_Scene
 
         currentMapType = SceneManager.GetActiveScene().name.Substring(0, SceneManager.GetActiveScene().name.Length - 1);
 
-        weaponImage = Managers.Resource.Load<Sc_PlayerWeaponImage>("Scriptable/PlayerWeaponImage");
+        //weaponImage = Managers.Resource.Load<Sc_PlayerWeaponImage>("Scriptable/PlayerWeaponImage");
 
 
         if (!isTest)
