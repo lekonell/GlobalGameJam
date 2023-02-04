@@ -6,7 +6,7 @@ using GameManager;
 using DG.Tweening;
 
 public class PlayerControl : MonoBehaviour {
-	private Animator animator;
+	public Animator animator;
 
 	public enum ePlayerAttackType {
 		AttackTypeMelee,
@@ -25,13 +25,14 @@ public class PlayerControl : MonoBehaviour {
 		DirectionRight
 	};
 
-	private PlayerWeaponManager playerWeaponManager;
+	public PlayerWeaponManager playerWeaponManager;
 
+	public bool isPlayerBaseAttack = false;
 	private float playerBaseAttackCooldown = 1.0f;
 	private bool isPlayerBaseAttackCooldown = false;
 	private ePlayerDirection playerDirection = ePlayerDirection.DirectionLeft;
 
-	private void Awake() {
+	private void Start() {
 		animator = GetComponent<Animator>();
 		playerWeaponManager = GetComponent<PlayerWeaponManager>();
 	}
@@ -52,7 +53,7 @@ public class PlayerControl : MonoBehaviour {
 			 * UpdateDirection() 함수를 호출해 transform.Rotate로 Player의 방향을 전환시킨다.
 			 * 이 때 Player의 이동방향은 transform의 결과를 따르는 것으로 보인다.
 			 * * 즉, transform 이전의 우측 이동은 transform 이후의 좌측 이동과 동일하다.
-			 * 따라서 왼쪽, 오른쪽 이동 모두 같은 방향(playerDirectionRight)으로 이동시키도록 구현한다.
+			 * 따라서 왼쪽, 오른쪽 이동 모두 같은 방향(playerDirectionLeft)으로 이동시키도록 구현한다.
 			 */
 
 			moveVector += Vector2.left;
@@ -127,6 +128,10 @@ public class PlayerControl : MonoBehaviour {
 				animator.SetFloat("AttackState", 0);
 				animator.SetFloat("NormalState", 0);
 				animator.SetTrigger("Attack");
+				
+				isPlayerBaseAttack = true;
+				ItemManager.Find("Player/L_Weapon").GetComponent<PlayerBaseAttack>().SetValid(true);
+
 				break;
 			case ePlayerAttackType.AttackTypeRange:
 				animator.SetFloat("AttackState", 0);
@@ -154,6 +159,7 @@ public class PlayerControl : MonoBehaviour {
 
 	private IEnumerator PlayerBaseAttackCooldownProcess(float cooldown) {
 		yield return new WaitForSeconds(cooldown);
+		isPlayerBaseAttack = false;
 		isPlayerBaseAttackCooldown = false;
 	}
 }

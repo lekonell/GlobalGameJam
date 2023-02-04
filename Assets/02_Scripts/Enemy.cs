@@ -1,24 +1,33 @@
-using GameManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using GameManager;
+using DG.Tweening;
 
 public class Enemy : MonoBehaviour {
 	private Rigidbody2D rigid;
 	private GameObject target;
+	private GameObject barHP;
 
-	public static float HP;
-	public static float speed;
-	public static float AD;
+	public float HP;
+	public float maxHP;
+	public float enemySpeed;
+	public float AD;
 	public int nextmove;
+
+	public bool isDead = false;
 
 	void Start() {
 		HP = 100;
+		maxHP = 100;
+
 		rigid = GetComponent<Rigidbody2D>();
-		speed = 3;
+		enemySpeed = 3;
 		AD = 10.0f;
 		Invoke("Think", 5);
 		target = ItemManager.Find("Player");
+		barHP = gameObject.transform.Find("Canvas/barHP").gameObject;
 	}
 
 	void Update() {
@@ -33,7 +42,7 @@ public class Enemy : MonoBehaviour {
 
 	void Move() {
 		Vector2 dist = (target.transform.position - transform.position).normalized;
-		transform.Translate(dist * Enemy.speed * Time.deltaTime);
+		transform.Translate(dist * enemySpeed * Time.deltaTime);
 	}
 
 	void Rendom_Move() {
@@ -47,6 +56,27 @@ public class Enemy : MonoBehaviour {
 	}
 
 	private void OnCollisionEnter2D() {
-		print("다");
+		//
+	}
+
+	public void UpdateHP(float newHP) {
+		HP = newHP;
+
+		if (HP >= maxHP)
+			HP = maxHP;
+
+		if (HP < 0)
+			HP = 0;
+
+		barHP.GetComponent<Image>().fillAmount = HP / maxHP;
+
+		if (HP <= 0) {
+			isDead = true;
+
+			gameObject.GetComponent<SpriteRenderer>().material.DOColor(Color.black, 0.8f).OnComplete(() => {
+				// Destroy(gameObject);
+				gameObject.SetActive(false);
+			});
+		}
 	}
 }

@@ -37,7 +37,7 @@ public class PlayerAttackManager : MonoBehaviour {
 		//	return;
 
 		isValid = false;
-		// enemyManager.SetHP(enemyManager.currentHP - damage);
+		// enemyManager.UpdateHP(enemyManager.currentHP - damage);
 
 		PlayerAttackDestroy();
 	}

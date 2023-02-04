@@ -10,6 +10,7 @@ public class PlayerWeaponManager : MonoBehaviour {
 
 	private ePlayerWeaponType weaponType = ePlayerWeaponType.WeaponTypeMelee;
 	private float weaponCooldown = 1.0f;
+	private float weaponDamage = 36.0f;
 
 	public PlayerWeaponManager SetWeaponType(ePlayerWeaponType _weaponType) {
 		weaponType = _weaponType;
@@ -21,5 +22,7 @@ public class PlayerWeaponManager : MonoBehaviour {
 		return this;
 	}
 
-
+	public float GetWeaponDamage() {
+		return weaponDamage;
+	}
 }
