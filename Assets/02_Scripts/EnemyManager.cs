@@ -40,7 +40,7 @@ public class EnemyManager : MonoBehaviour {
 				SetEnemyHP(enemyMaxHP);
 				SetEnemyAttackDamage(1.0f);
 				SetEnemyAttackCooldown(1.6f);
-				SetEnemyMoveSpeed(2.4f);
+				SetEnemyMoveSpeed(2.0f);
 				break;
 			case eEnemyType.EnemyRange:
 				SetEnemyMaxHP(50.0f);
@@ -230,6 +230,9 @@ public class EnemyManager : MonoBehaviour {
 		switch (enemyType) {
 			case eEnemyType.EnemyMelee:
 				PlayerControl playerControl = player.GetComponent<PlayerControl>();
+				if (playerControl.GetPlayerSuperArmorState())
+					return;
+
 				playerControl.SetPlayerHP(playerControl.GetPlayerHP() - enemyAttackDamage);
 				break;
 			case eEnemyType.EnemyRange:

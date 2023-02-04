@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3290579539953428472}
   - component: {fileID: 913001511880225530}
   - component: {fileID: 6139132030462443831}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.027746, y: 8.408416}
+  m_AnchoredPosition: {x: 0, y: -1.8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3290579539953428472
@@ -129,16 +129,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7103448288646491391}
-  m_LocalRotation: {x: -0, y: -0, z: 0.4290149, w: 0.90329736}
-  m_LocalPosition: {x: 11.3, y: -10.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7103448288987427994}
   - {fileID: 187123716381908536}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 50.81}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7103448288646490881
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 1
   isDead: 0
+  enemyDirection: 0
 --- !u!61 &7005421739824326958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -218,7 +219,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +230,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!50 &444152809728155521
 Rigidbody2D:
@@ -294,7 +295,7 @@ GameObject:
   - component: {fileID: 357546337313410479}
   - component: {fileID: 554129617105475984}
   - component: {fileID: 6758507996403504789}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: barBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +371,7 @@ GameObject:
   - component: {fileID: 6868965336532038357}
   - component: {fileID: 3730554282568823358}
   - component: {fileID: 1150831363875104823}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: barHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}

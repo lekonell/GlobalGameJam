@@ -43,7 +43,7 @@ public class PlayerWeaponManager : MonoBehaviour {
 	}
 
 	public PlayerWeaponManager SetWeaponDamage(float _weaponDamage) {
-		weaponDamage = _weaponDamage;
+		weaponDamage = _weaponDamage * 10;
 		return this;
 	}
 

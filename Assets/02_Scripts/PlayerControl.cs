@@ -38,13 +38,14 @@ public class PlayerControl : MonoBehaviour {
 	private float playerHP = 5.0f;
 	private float playerMaxHP = 5.0f;
 
-	private bool isPlayerSuperArmor = false;
+	private bool isPlayerSuperArmor = true;
+	private bool isPlayerStunned = false;
 	private bool isPlayerWeaponChangeCooldown = false;
 	private bool isPlayerBaseAttackCooldown = false;
 	private ePlayerDirection playerDirection = ePlayerDirection.DirectionLeft;
 
-	private float moveSpeed = 4.0f;
-	private float moveMultiplier = 6.0f;
+	private float moveSpeed = 5.0f;
+	private float moveMultiplier = 5.0f;
 
 	public PlayerControl SetPlayerHP(float _playerHP) {
 		float _playerOldHP = playerHP;
@@ -86,6 +87,7 @@ public class PlayerControl : MonoBehaviour {
 		isPlayerSuperArmor = _playerSuperArmorState;
 
 		if (isPlayerSuperArmor) {
+			isPlayerStunned = true;
 			StartCoroutine(PlayerSuperArmorProcess());
 		}
 
@@ -97,6 +99,8 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	private IEnumerator PlayerSuperArmorProcess() {
+		yield return new WaitForSeconds(1.0f);
+		isPlayerStunned = false;
 		yield return new WaitForSeconds(1.0f);
 		isPlayerSuperArmor = false;
 	}
@@ -132,7 +136,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	void Update() {
-		if (isPlayerSuperArmor) {
+		if (isPlayerStunned) {
 			animator.SetFloat("RunState", 0);
 			return;
 		}

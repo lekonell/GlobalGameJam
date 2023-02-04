@@ -24881,7 +24881,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 220081424274275042, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 247311316935723032, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 247311316935723035, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
@@ -24943,6 +24947,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 247311317969816043, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 305455566340483934, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_TagString
       value: Enemy
@@ -24969,15 +24977,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 732242586128808238, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 852655781460622142, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 922705382330807070, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 977127663592468887, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_TagString
@@ -25177,7 +25185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4041494973674659283, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4052337220241683126, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_TagString
@@ -25205,7 +25213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537062463377571660, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4540657066375437289, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_TagString
@@ -25257,7 +25265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406811188179959073, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5698728915122157460, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_TagString
@@ -25357,7 +25365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7440154763670201612, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7614569647740418517, guid: bf1bdb722594bbc4cbd87d07270d5c0c, type: 3}
       propertyPath: m_TagString
@@ -28620,18 +28628,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015625, y: 0.09375}
+  m_Offset: {x: -0.017625, y: 0.19375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4375, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.22222221}
+    oldSize: {x: 0.21875, y: 0.5625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.8}
+  m_Size: {x: 0.2, y: 1.2}
   m_EdgeRadius: 0
 --- !u!114 &7048110281669299554
 MonoBehaviour:
@@ -29387,7 +29395,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -15
-  m_Sprite: {fileID: 21300000, guid: 193714ca8a02e154db928dce3f350a41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38fdce37863bcbe47add8850694d34e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
