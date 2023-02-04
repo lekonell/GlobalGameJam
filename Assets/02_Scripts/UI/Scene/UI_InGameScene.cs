@@ -68,7 +68,7 @@ public class UI_InGameScene : UI_Scene
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Managers.UI.currentPopup.GetType() != typeof(UI_InGamePause))
+            if (Managers.UI.currentPopup == null || Managers.UI.currentPopup.GetType() != typeof(UI_InGamePause))
             {
                 Time.timeScale = 0;
                 Managers.UI.ShowPopupUI<UI_InGamePause>();
@@ -145,10 +145,12 @@ public class UI_InGameScene : UI_Scene
     //    UpdateUI();
     //}
 
-    public void UpdateUI_PlayerDie(PointerEventData data = default) {
-		int playerHP = (int)Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().GetPlayerHP();
+    public void UpdateUI_PlayerDie(PointerEventData data = default)
+    {
+        int playerHP = (int)Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().GetPlayerHP();
 
-        if (playerHP == 0) {
+        if (playerHP == 0)
+        {
             Managers.UI.ShowPopupUI<UI_ShowLoading>();
             Managers.Scene.LoadScene(Define.Scene.Main, Managers.Scene.changeSceneDelay);
         }
