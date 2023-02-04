@@ -74,13 +74,6 @@ public class UI_InGameScene : UI_Scene
                 Managers.UI.ShowPopupUI<UI_InGamePause>();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Managers.GM.MonsterCount--;
-            print(Managers.GM.MonsterCount);
-        }
-
     }
 
 
