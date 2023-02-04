@@ -72,8 +72,10 @@ public class Enemy : MonoBehaviour {
 
 		if (HP <= 0) {
 			isDead = true;
+			Destroy(gameObject.GetComponent<Rigidbody2D>());
+			Destroy(gameObject.GetComponent<BoxCollider2D>());
 
-			gameObject.GetComponent<SpriteRenderer>().material.DOColor(Color.black, 0.8f).OnComplete(() => {
+			gameObject.GetComponent<SpriteRenderer>().material.DOColor(Color.black, 0.5f).OnComplete(() => {
 				// Destroy(gameObject);
 				gameObject.SetActive(false);
 			});

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameManager;
 using DG.Tweening;
+using static PlayerControl;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -131,7 +132,7 @@ public class PlayerControl : MonoBehaviour
         if (playerDirection == updateDirection)
             return;
 
-        transform.Rotate(0, 180.0f, 0);
+		transform.Rotate(0, 180.0f, 0);
         playerDirection = updateDirection;
     }
 
@@ -159,7 +160,7 @@ public class PlayerControl : MonoBehaviour
                 animator.SetFloat("NormalState", 0);
                 animator.SetTrigger("Attack");
 
-                ItemManager.Find("Player/L_Weapon").GetComponent<PlayerBaseAttack>().SetDamage(playerWeaponManager.GetWeaponDamage()).SetValid(true);
+                ItemManager.Find("Player/R_Weapon").GetComponent<PlayerBaseAttack>().SetDamage(playerWeaponManager.GetWeaponDamage()).SetValid(true);
 
                 break;
             case ePlayerWeaponType.WeaponTypeRange:
