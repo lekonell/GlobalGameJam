@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7103448288646490880}
   - component: {fileID: 7103448288646490881}
   - component: {fileID: 7103448288646491390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_u
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   Bullet: {fileID: 3595717390240496910, guid: 66be07c459e49ad4eb7a15d194700ae1, type: 3}
   FirePos: {fileID: 7103448288987427994}
   del: 0
+  nextmove: 0
 --- !u!1 &7103448288987427995
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7103448288987427994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
