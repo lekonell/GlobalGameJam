@@ -20,10 +20,15 @@ public class bullet : MonoBehaviour
         transform.position += dir * speed;
         
     }
-    private void OnCollisionEnter2D() 
+    private void OnTriggerEnter2D(Collider2D col) 
     {
-        print("dd");
-       Destroy(this.gameObject); 
+       if(col.CompareTag("Player")) 
+       {
+            Destroy(this.gameObject);
+       }
+       Destroy(this.gameObject, 3f);
+
+            
 	}
 
 
