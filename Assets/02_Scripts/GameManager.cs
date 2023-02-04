@@ -26,15 +26,6 @@ namespace GameManager {
 			ItemManager.Register("Player/R_Weapon", new Item("Player/R_Weapon", GameObject.Find("R_Weapon")));
 
 			ItemManager.Register("PlayerBaseAttackProjectile", new Item("PlayerBaseAttackProjectile", GameObject.Find("PlayerBaseAttackProjectile")));
-
-			//GameObject Objects = GameObject.Find("Objects");
-			//for (int i = 0; i < Objects.transform.childCount; i++) {
-			//	GameObject ObjectsToBeRegistered = Objects.transform.GetChild(i).gameObject;
-			//	ItemManager.Register(ObjectsToBeRegistered.name, ObjectsToBeRegistered);
-			//	// ObjectsToBeRegistered.SetActive(false);
-			//}
-
-			//Objects.SetActive(false);
 		}
 
 		public static void Pause() {
@@ -107,7 +98,9 @@ namespace GameManager {
 		}
 
 		public static void EnsureInited() {
-			if (!isInited)
+			GameManager.Init();
+
+			if (!isInited) 
 				Init();
 		}
 
