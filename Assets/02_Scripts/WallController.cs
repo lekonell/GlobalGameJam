@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class WallController : MonoBehaviour
 {
-    GameObject normalTilemap;
     GameObject battleTilemap;
 
     // Start is called before the first frame update
     void Start()
     {
-        normalTilemap = transform.Find("TilemapNormalWall").gameObject;
         battleTilemap = transform.Find("TilemapBattleWall").gameObject;
 
         SetTilemap();
@@ -26,12 +24,10 @@ public class WallController : MonoBehaviour
     {
         if (Managers.GM.isFight)
         {
-            normalTilemap.SetActive(false);
             battleTilemap.SetActive(true);
         }
         else
         {
-            normalTilemap.SetActive(true);
             battleTilemap.SetActive(false);
         }
     }
