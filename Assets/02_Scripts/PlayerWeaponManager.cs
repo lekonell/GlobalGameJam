@@ -34,6 +34,8 @@ public class PlayerWeaponManager : MonoBehaviour {
 				break;
 		}
 
+		Managers.UI.UpdateUI();
+
 		return this;
 	}
 

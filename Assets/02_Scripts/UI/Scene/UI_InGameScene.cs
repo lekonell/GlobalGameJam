@@ -50,7 +50,7 @@ public class UI_InGameScene : UI_Scene
 
         currentMapType = SceneManager.GetActiveScene().name.Substring(0, SceneManager.GetActiveScene().name.Length - 1);
 
-        //weaponImage = Managers.Resource.Load<Sc_PlayerWeaponImage>("Scriptable/PlayerWeaponImage");
+        weaponImage = Managers.Resource.Load<Sc_PlayerWeaponImage>("Scriptable/PlayerWeaponImage");
 
 
         if (!isTest)
@@ -79,17 +79,24 @@ public class UI_InGameScene : UI_Scene
 
     public override void UpdateUI()
     {
-        //switch (Managers.TempPlayer.currentWeapon)
-        //{
-        //    case "무기1":
-        //        GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponBow;
-        //        break;
-        //    case "무기2":
-        //        GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponSword;
-        //        break;
-        //    default:
-        //        break;
-        //}
+
+        PlayerWeaponManager playerWeaponManager = Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().playerWeaponManager;
+        if (playerWeaponManager != null)
+        {
+            int playerWeaponType = (int)playerWeaponManager.GetWeaponType();
+            switch (playerWeaponType)
+            {
+                case 0: // 근접
+                    GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponSword;
+                    break;
+                case 1: // 원거리
+                    GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponBow;
+                    break;
+                default:
+                    break;
+            }
+        }
+
 
 
         GetImage((int)Images.HP1).enabled = false;
