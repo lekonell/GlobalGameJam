@@ -44,7 +44,7 @@ public class UI_InGameScene : UI_Scene
 
         GetButton((int)Buttons.TestNextButton).gameObject.BindEvent(Managers.GM.OnPortal);
         // GetButton((int)Buttons.TestHit).gameObject.BindEvent(OnClickTestHit);
-        GetButton((int)Buttons.TestGetGold).gameObject.BindEvent(OnClickTestGetGold);
+        //GetButton((int)Buttons.TestGetGold).gameObject.BindEvent(OnClickTestGetGold);
         GetButton((int)Buttons.TestChangeWeapon).gameObject.BindEvent(OnClickChangeWeapon);
 
 
@@ -86,22 +86,18 @@ public class UI_InGameScene : UI_Scene
 
     public override void UpdateUI()
     {
-		int playerWeaponType = (int)Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().playerWeaponManager.GetWeaponType();
+        //switch (Managers.TempPlayer.currentWeapon)
+        //{
+        //    case "무기1":
+        //        GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponBow;
+        //        break;
+        //    case "무기2":
+        //        GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponSword;
+        //        break;
+        //    default:
+        //        break;
+        //}
 
-		switch (playerWeaponType)
-        {
-            case 1:
-                GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponBow;
-                break;
-            case 0:
-                GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponSword;
-                break;
-            default:
-                break;
-        }
-
-        GetImage((int)Images.WeaponImage).GetComponentInChildren<Text>().text = Managers.TempPlayer.currentWeapon;
-        GetText((int)Texts.GoldText).GetComponent<Text>().text = $"{Managers.TempPlayer.gold}";
 
         GetImage((int)Images.HP1).enabled = false;
         GetImage((int)Images.HP2).enabled = false;
@@ -143,12 +139,11 @@ public class UI_InGameScene : UI_Scene
         }
     }
 
-    void OnClickTestGetGold(PointerEventData data = default)
-    {
-        print("골드");
-        Managers.TempPlayer.gold++;
-        UpdateUI();
-    }
+    //void OnClickTestGetGold(PointerEventData data = default)
+    //{
+    //    Managers.TempPlayer.gold++;
+    //    UpdateUI();
+    //}
 
     public void UpdateUI_PlayerDie(PointerEventData data = default) {
 		int playerHP = (int)Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().GetPlayerHP();
@@ -163,10 +158,10 @@ public class UI_InGameScene : UI_Scene
 
     void OnClickChangeWeapon(PointerEventData data = default)
     {
-        if (Managers.TempPlayer.currentWeapon == "무기1")
-            Managers.TempPlayer.currentWeapon = "무기2";
-        else
-            Managers.TempPlayer.currentWeapon = "무기1";
+        //if (Managers.TempPlayer.currentWeapon == "무기1")
+        //    Managers.TempPlayer.currentWeapon = "무기2";
+        //else
+        //    Managers.TempPlayer.currentWeapon = "무기1";
 
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BattleFieldController : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class BattleFieldController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Collider2D[] coll = Physics2D.OverlapBoxAll(transform.position, GetComponent<Collider2D>().bounds.size,0,1<<6);
-        foreach (var item in coll)
+        Collider2D[] colls = Physics2D.OverlapBoxAll(transform.position, GetComponent<Collider2D>().bounds.size,0,1<<6);
+        var goList = (from coll in colls
+                 select coll.gameObject).Distinct().ToList();
+
+        foreach (var item in goList)
         {
             enemys.Add(item.gameObject);
             item.gameObject.SetActive(false);

@@ -30,15 +30,6 @@ public class UI_RootScene : UI_Scene
 
         Bind<GameObject>(typeof(GameObjects)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩.
 
-        GetObject((int)GameObjects.Player).GetComponent<Image>().sprite = Resources.Load<Sprite>("SPUM/SPUM_Sprites/Items/6_Weapons/transparent");
-
-        realPlayer = GameObject.Find("Player");
-        // realPlayer.transform.SetParent(GameObject.Find("UI_RootScene").transform);
-
-		// realPlayer.transform.SetParent(GetObject((int)GameObjects.Player).transform);
-
-		realPlayer.transform.position = realPlayer.transform.position + GetObject((int)GameObjects.Point1 + Managers.GM.currentFloor).transform.position;
-
 
 		// GetObject((int)GameObjects.Player).transform.position = GetObject((int)GameObjects.Point1 + Managers.GM.currentFloor).transform.position;
 
@@ -59,8 +50,7 @@ public class UI_RootScene : UI_Scene
                 GetObject((int)GameObjects.Point1 + Managers.GM.currentFloor).transform.position,
                 GetObject((int)GameObjects.Point1 + Managers.GM.currentFloor + 1).transform.position,
                 currentDelta / moveTime);
-            // GetObject((int)GameObjects.Player).transform.position = movePos;
-            realPlayer.transform.position = movePos;
+            GetObject((int)GameObjects.Player).transform.position = movePos;
 
 			currentDelta += Time.deltaTime;
             yield return 0;

@@ -26,7 +26,6 @@ public class Managers : MonoBehaviour
     public static UIManager UI { get { return Instance._ui; } }
 
     TempPlayerManager _tempPlayer = new TempPlayerManager();
-    public static TempPlayerManager TempPlayer { get { return Instance._tempPlayer; } }
 
 
     void Start()
