@@ -2995,12 +2995,11 @@ public class SPUM_Manager : MonoBehaviour
             return Color.white;
     }
 
-    public void CopyToClipboard()
+#if UnityEditor
+	public void CopyToClipboard()
     {
         GUIUtility.systemCopyBuffer = _hexColorText.text;
         ToastOn("Copied Color Code");
     }
-    
-    
-
+#endif
 }
