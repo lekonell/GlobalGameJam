@@ -25,12 +25,16 @@ public class UI_TreeScene : UI_Scene
     }
 
     // Start is called before the first frame update
+
+    private GameObject realPlayer = null;
+
     void Start()
     {
         base.Init(); // UI_Button 의 부모인 UI_PopUp 의 Init() 호출
 
         Bind<GameObject>(typeof(GameObjects)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩. 
 
+        realPlayer = GameObject.Find("UnitRoot");
 
         //GetObject((int)GameObjects.Player).transform.DOMove(Vector3.zero, 3);
         StartCoroutine(CoEvent());
@@ -48,6 +52,12 @@ public class UI_TreeScene : UI_Scene
         CoStopper = true;
         GetObject((int)GameObjects.Tree).GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, 600, 0), playerMoveTime);
         GetObject((int)GameObjects.Player).GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, -50, 0), playerMoveTime);
+
+        realPlayer.GetComponent<PlayerControl>().animator.SetFloat("RunState", 0.5f);
+        realPlayer.transform.DOMove(realPlayer.transform.position, 2.6f).OnComplete(() => {
+			realPlayer.GetComponent<PlayerControl>().animator.SetFloat("RunState", 0.0f);
+		});
+
         yield return new WaitForSeconds(playerMoveTime);
         ChangeScene();
     }

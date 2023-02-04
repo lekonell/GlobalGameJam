@@ -30,6 +30,11 @@ public class UI_RootScene : UI_Scene
 
         Bind<GameObject>(typeof(GameObjects)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩.
 
+        realPlayer = GameObject.Find("UnitRoot");
+        realPlayer.GetComponent<PlayerControl>().animator.SetFloat("RunState", 0.5f);
+        realPlayer.transform.DOMove(realPlayer.transform.position, 2.6f).OnComplete(() => {
+			realPlayer.GetComponent<PlayerControl>().animator.SetFloat("RunState", 0.0f);
+		});
 
 		// GetObject((int)GameObjects.Player).transform.position = GetObject((int)GameObjects.Point1 + Managers.GM.currentFloor).transform.position;
 
