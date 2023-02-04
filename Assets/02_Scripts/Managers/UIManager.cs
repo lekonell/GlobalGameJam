@@ -8,6 +8,16 @@ public class UIManager
 
     Stack<UI_Popup> _popupStack = new Stack<UI_Popup>();
     UI_Scene _sceneUI = null;
+    public UI_Popup currentPopup 
+    {
+        get 
+        {
+            if (_popupStack.Count == 0)
+                return null;
+            else
+                return _popupStack.Peek();
+        }
+    }
 
     public GameObject Root
     {

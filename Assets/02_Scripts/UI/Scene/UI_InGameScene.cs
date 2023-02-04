@@ -68,8 +68,11 @@ public class UI_InGameScene : UI_Scene
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0;
-            Managers.UI.ShowPopupUI<UI_InGamePause>();
+            if (Managers.UI.currentPopup.GetType() != typeof(UI_InGamePause))
+            {
+                Time.timeScale = 0;
+                Managers.UI.ShowPopupUI<UI_InGamePause>();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Z))
