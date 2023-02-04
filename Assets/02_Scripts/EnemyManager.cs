@@ -60,6 +60,8 @@ public class EnemyManager : MonoBehaviour {
 			case eEnemyType.Box:
 				SetEnemyMaxHP(1.0f);
 				SetEnemyHP(1.0f);
+				transform.Find("BoxAnimator").gameObject.SetActive(false);
+				// transform.Find("BoxAnimator").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("SPUM/SPUM_Sprites/Items/6_Weapons/transparent");
 				break;
 		}
 
@@ -106,11 +108,21 @@ public class EnemyManager : MonoBehaviour {
 		}
 
 		if (enemyHP <= 0) {
+			float destroyTime = 0.5f;
+
+			if (enemyType == eEnemyType.Box) {
+				destroyTime = 0.7f;
+				GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("SPUM/SPUM_Sprites/Items/6_Weapons/transparent");
+
+				transform.Find("BoxAnimator").gameObject.SetActive(true);
+				transform.Find("BoxAnimator").GetComponent<Animator>().SetTrigger("Destroy");
+			}
+
 			Destroy(GetComponent<Rigidbody2D>());
 			Destroy(GetComponent<BoxCollider2D>());
 			isDead = true;
 
-			transform.GetComponent<SpriteRenderer>().material.DOColor(Color.black, 0.5f).OnComplete(() => {
+			transform.GetComponent<SpriteRenderer>().material.DOColor(Color.black, destroyTime).OnComplete(() => {
 				Destroy(gameObject);
 				Managers.GM.MonsterCount -= 1;
 				print(Managers.GM.MonsterCount);

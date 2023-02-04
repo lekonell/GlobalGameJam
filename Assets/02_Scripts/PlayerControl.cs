@@ -32,6 +32,7 @@ public class PlayerControl : MonoBehaviour {
 	};
 
 	public PlayerWeaponManager playerWeaponManager;
+	public Animator playerMeleeAnimator;
 
 	private float playerHP = 5.0f;
 	private float playerMaxHP = 5.0f;
@@ -125,6 +126,8 @@ public class PlayerControl : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		playerWeaponManager = GetComponent<PlayerWeaponManager>();
 		playerWeaponManager.SetWeaponType(ePlayerWeaponType.WeaponTypeMelee);
+
+		playerMeleeAnimator = transform.Find("MeleeAnimator").GetComponent<Animator>();
 	}
 
 	void Update() {
@@ -227,6 +230,10 @@ public class PlayerControl : MonoBehaviour {
 				animator.SetFloat("AttackState", 0);
 				animator.SetFloat("NormalState", 0);
 				animator.SetTrigger("Attack");
+
+				transform.DOMove(transform.position, 0.075f).OnComplete(() => {
+					playerMeleeAnimator.SetTrigger("MeleeAttack");
+				});
 
 				ItemManager.Find("Player/R_Weapon").GetComponent<PlayerBaseAttack>().SetDamage(playerWeaponManager.GetWeaponDamage()).SetValid(true);
 
