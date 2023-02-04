@@ -9,7 +9,12 @@ public class PlayerControl : MonoBehaviour
 {
     public Animator animator;
 
-    public enum ePlayerAttackType
+	public enum ePlayerWeaponType {
+		WeaponTypeMelee,
+		WeaponTypeRange
+	};
+
+	public enum ePlayerAttackType
     {
         AttackTypeMelee,
         AttackTypeRange
@@ -31,14 +36,19 @@ public class PlayerControl : MonoBehaviour
 
     public PlayerWeaponManager playerWeaponManager;
 
-    private float playerBaseAttackCooldown = 0.6f;
+    private bool isPlayerWeaponChangeCooldown = false;
     private bool isPlayerBaseAttackCooldown = false;
     private ePlayerDirection playerDirection = ePlayerDirection.DirectionLeft;
 
-    private void Start()
+
+	private float moveSpeed = 4.0f;
+	private float moveMultiplier = 3.0f;
+
+	private void Start()
     {
         animator = GetComponent<Animator>();
         playerWeaponManager = GetComponent<PlayerWeaponManager>();
+        playerWeaponManager.SetWeaponType(ePlayerWeaponType.WeaponTypeMelee);
     }
 
     void Update()
@@ -83,8 +93,6 @@ public class PlayerControl : MonoBehaviour
             moveVector = moveVector.normalized;
             animator.SetFloat("RunState", 0.5f);
 
-            float moveSpeed = 4.0f;
-            float moveMultiplier = 1.0f;
             transform.Translate(moveVector * moveSpeed * moveMultiplier * Time.deltaTime);
         }
         else
@@ -104,14 +112,18 @@ public class PlayerControl : MonoBehaviour
 		 */
         if (Input.GetMouseButton(0))
         {
-            PlayerBaseAttack(ePlayerAttackType.AttackTypeMelee);
+            PlayerBaseAttack(playerWeaponManager.GetWeaponType());
             return;
         }
         else if (Input.GetMouseButton(1))
         {
-            PlayerBaseAttack(ePlayerAttackType.AttackTypeRange);
-            return;
-        }
+            if (isPlayerWeaponChangeCooldown)
+                return;
+
+			isPlayerWeaponChangeCooldown = true;
+			playerWeaponManager.SetWeaponType(1 - playerWeaponManager.GetWeaponType());
+			StartCoroutine(PlayerWeaponChangeCooldownProcess(1.0f));
+		}
     }
 
     void UpdateDirection(ePlayerDirection updateDirection)
@@ -132,7 +144,7 @@ public class PlayerControl : MonoBehaviour
         Debug.Log("[PrintVector3] " + vectorName + "(" + vector.x + ", " + vector.y + ", " + vector.z + ")");
     }
 
-    private void PlayerBaseAttack(ePlayerAttackType playerAttackType)
+    private void PlayerBaseAttack(ePlayerWeaponType playerAttackType)
     {
         if (ItemManager.Find("Player/L_Weapon") == null || GameManager.GameManager.isPaused || GameManager.GameManager.isPausingOverlay)
             return;
@@ -142,39 +154,44 @@ public class PlayerControl : MonoBehaviour
 
         switch (playerAttackType)
         {
-            case ePlayerAttackType.AttackTypeMelee:
+            case ePlayerWeaponType.WeaponTypeMelee:
                 animator.SetFloat("AttackState", 0);
                 animator.SetFloat("NormalState", 0);
                 animator.SetTrigger("Attack");
 
-                ItemManager.Find("Player/L_Weapon").GetComponent<PlayerBaseAttack>().SetValid(true);
+                ItemManager.Find("Player/L_Weapon").GetComponent<PlayerBaseAttack>().SetDamage(playerWeaponManager.GetWeaponDamage()).SetValid(true);
 
                 break;
-            case ePlayerAttackType.AttackTypeRange:
+            case ePlayerWeaponType.WeaponTypeRange:
                 animator.SetFloat("AttackState", 0);
                 animator.SetFloat("NormalState", 0.5f);
                 animator.SetTrigger("Attack");
 
-                transform.DOMove(transform.position, 0.4f).OnComplete(() =>
+				Vector2 playerPosition = transform.position;
+				Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				Vector2 dist = (inputPosition - playerPosition).normalized;
+
+				transform.DOMove(transform.position, 0.4f).OnComplete(() =>
                 {
                     GameObject playerProjectile = Instantiate(ItemManager.Find("PlayerBaseAttackProjectile"), ItemManager.Find("Player/L_Weapon").transform.position, Quaternion.identity);
 
-                    Vector2 playerPosition = transform.position;
-                    Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    Vector2 dist = (inputPosition - playerPosition).normalized;
-
-                    playerProjectile.GetComponent<PlayerAttackManager>().SetLifespan(1.2f).SetDirection(dist).SetSpeed(10.0f).SetValid(true).SetDamage(10);
+                    playerProjectile.GetComponent<PlayerAttackManager>().SetLifespan(1.2f).SetDirection(dist).SetSpeed(10.0f).SetValid(true).SetDamage(playerWeaponManager.GetWeaponDamage());
                 });
                 break;
         }
 
         isPlayerBaseAttackCooldown = true;
-        StartCoroutine(PlayerBaseAttackCooldownProcess(playerBaseAttackCooldown));
+        StartCoroutine(PlayerBaseAttackCooldownProcess(playerWeaponManager.GetWeaponCooldown()));
     }
 
     private IEnumerator PlayerBaseAttackCooldownProcess(float cooldown)
     {
         yield return new WaitForSeconds(cooldown);
         isPlayerBaseAttackCooldown = false;
+    }
+
+    private IEnumerator PlayerWeaponChangeCooldownProcess(float cooldown) {
+        yield return new WaitForSeconds(cooldown);
+        isPlayerWeaponChangeCooldown = false;
     }
 }

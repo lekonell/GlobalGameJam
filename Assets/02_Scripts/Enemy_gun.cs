@@ -18,8 +18,13 @@ public class Enemy_gun : MonoBehaviour {
 	public int nextmove;
 	public bool isDead = false;
 	Animation anim;
-	Animator Animator;
+	Animator animator;
 	Rigidbody2D rigid;
+
+	private void Awake() {
+		animator = GetComponent<Animator>();
+	}
+
 	void Start() 
 	{
 		HP = 100;
@@ -34,7 +39,7 @@ public class Enemy_gun : MonoBehaviour {
 			Instantiate(Bullet, FirePos.transform.position, FirePos.transform.rotation);
 			del = 1;
 			print("발싸");
-			Animator.SetBool("NewBool", true);
+			animator.SetBool("NewBool", true);
 
 		}
 

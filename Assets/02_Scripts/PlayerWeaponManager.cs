@@ -1,19 +1,39 @@
+using GameManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerWeaponManager : MonoBehaviour {
-	public enum ePlayerWeaponType {
-		WeaponTypeMelee,
-		WeaponTypeRange
-	};
+	private GameObject player = null;
+	private PlayerControl.ePlayerWeaponType weaponType = PlayerControl.ePlayerWeaponType.WeaponTypeMelee;
+	private float weaponCooldown;
+	private float weaponDamage;
 
-	private ePlayerWeaponType weaponType = ePlayerWeaponType.WeaponTypeMelee;
-	private float weaponCooldown = 1.0f;
-	private float weaponDamage = 36.0f;
+	private void Update() {
+		if (player == null) {
+			player = ItemManager.Find("Player");
+			return;
+		}
+	}
 
-	public PlayerWeaponManager SetWeaponType(ePlayerWeaponType _weaponType) {
+	public PlayerWeaponManager SetWeaponType(PlayerControl.ePlayerWeaponType _weaponType) {
 		weaponType = _weaponType;
+
+		switch (weaponType) {
+			case PlayerControl.ePlayerWeaponType.WeaponTypeMelee:
+				SetWeaponDamage(54.0f);
+				SetWeaponCooldown(0.6f);
+
+				ItemManager.Find("Player/R_Weapon").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("SPUM/SPUM_Sprites/Packages/Ver300/6_Weapons/New_Weapon_20");
+				break;
+			case PlayerControl.ePlayerWeaponType.WeaponTypeRange:
+				SetWeaponDamage(36.0f);
+				SetWeaponCooldown(1.0f);
+
+				ItemManager.Find("Player/R_Weapon").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("SPUM/SPUM_Sprites/Packages/Ver300/6_Weapons/New_Weapon_10");
+				break;
+		}
+
 		return this;
 	}
 
@@ -22,7 +42,20 @@ public class PlayerWeaponManager : MonoBehaviour {
 		return this;
 	}
 
+	public PlayerWeaponManager SetWeaponDamage(float _weaponDamage) {
+		weaponDamage = _weaponDamage;
+		return this;
+	}
+
 	public float GetWeaponDamage() {
 		return weaponDamage;
+	}
+
+	public float GetWeaponCooldown() {
+		return weaponCooldown;
+	}
+
+	public PlayerControl.ePlayerWeaponType GetWeaponType() {
+		return weaponType;
 	}
 }

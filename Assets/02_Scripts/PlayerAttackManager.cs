@@ -51,12 +51,12 @@ public class PlayerAttackManager : MonoBehaviour {
 			return;
 
 		GameObject enemyObject = collision.gameObject;
-		// EnemyManager enemyManager = enemyObject.GetComponent<EnemyManager>();
-		//if (enemyManager.isDead)
-		//	return;
+		Enemy enemyManager = enemyObject.GetComponent<Enemy>();
+		if (enemyManager.isDead)
+			return;
 
 		isValid = false;
-		// enemyManager.UpdateHP(enemyManager.currentHP - damage);
+		enemyManager.UpdateHP(enemyManager.HP - projectileDamage);
 
 		PlayerAttackDestroy();
 	}

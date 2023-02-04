@@ -12,6 +12,7 @@ public class PlayerBaseAttack : MonoBehaviour {
 	private PlayerWeaponManager playerWeaponManager;
 	public List<Collider2D> collisionEnemies;
 
+	private float weaponDamage;
 	private static bool isValid = false;
 
 	private IEnumerator PlayerFinder()
@@ -32,6 +33,11 @@ public class PlayerBaseAttack : MonoBehaviour {
 		StartCoroutine(PlayerFinder());
 		collisionEnemies = new List<Collider2D>();
 		isValid = false;
+	}
+
+	public PlayerBaseAttack SetDamage(float _weaponDamage) {
+		weaponDamage = _weaponDamage;
+		return this;
 	}
 
 	public PlayerBaseAttack SetValid(bool _isValid) {
@@ -70,7 +76,7 @@ public class PlayerBaseAttack : MonoBehaviour {
 
 		isValid = false;
 
-		enemyControl.UpdateHP(enemyControl.HP - playerWeaponManager.GetWeaponDamage());
+		enemyControl.UpdateHP(enemyControl.HP - weaponDamage);
 	}
 
 	private IEnumerator BaseAttackValidationProcess() {
