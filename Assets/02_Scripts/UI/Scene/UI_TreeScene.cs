@@ -7,8 +7,10 @@ using DG.Tweening;
 
 public class UI_TreeScene : UI_Scene
 {
-    public float bgMoveTime = 4f;
-    public float playerMoveTime = 4f; 
+    public float scaleControlTime = 2f;
+    public float bgMoveDelayTime = 1.8f;
+    public float bgMoveTime = 7f;
+    public float playerMoveTime = 4f;
 
     enum GameObjects
     {
@@ -36,9 +38,11 @@ public class UI_TreeScene : UI_Scene
     IEnumerator CoEvent()
     {
         yield return new WaitForSeconds(Managers.Scene.changeSceneDelay);
-        GetObject((int)GameObjects.Mover).GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, 0, 0), bgMoveTime);
+        GetObject((int)GameObjects.Mover).GetComponent<RectTransform>().DOScale(new Vector3(1, 1, 1), scaleControlTime).SetEase(Ease.InOutSine);
+        yield return new WaitForSeconds(bgMoveDelayTime);
+        StartCoroutine(SimpleCoroutine());
         yield return new WaitForSeconds(bgMoveTime);
-        GetObject((int)GameObjects.Player).GetComponent<RectTransform>().DOAnchorPos(Vector3.zero, playerMoveTime);
+        GetObject((int)GameObjects.Player).GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, 150, 0), playerMoveTime);
         yield return new WaitForSeconds(playerMoveTime);
         ChangeScene();
     }
@@ -46,5 +50,41 @@ public class UI_TreeScene : UI_Scene
     void ChangeScene()
     {
         Managers.Scene.LoadScene(Define.Scene.Root, Managers.Scene.changeSceneDelay);
+    }
+
+    private IEnumerator SimpleCoroutine()
+    {
+        float multiplierCoefficient = 1.0f;
+        RectTransform targetRect = GetObject((int)GameObjects.Mover).GetComponent<RectTransform>();
+
+        float elapsedTime = 0.0f;
+        while (elapsedTime <= 2.0f)
+        {
+            Vector3 dest = -targetRect.anchoredPosition;
+            elapsedTime += Time.deltaTime;
+            multiplierCoefficient = Mathf.Pow(elapsedTime, 2);
+            targetRect.transform.Translate(dest * multiplierCoefficient * Time.deltaTime);
+            yield return null;
+        }
+
+        elapsedTime = 0.0f;
+        while (elapsedTime <= 4.0f)
+        {
+            Vector3 dest = -targetRect.anchoredPosition / 1.3f;
+            elapsedTime += Time.deltaTime;
+            multiplierCoefficient = Mathf.Exp(2.0f * elapsedTime) * 4;
+            targetRect.transform.Translate(dest * multiplierCoefficient * Time.deltaTime);
+            yield return null;
+        }
+
+        elapsedTime = 0.0f;
+        while (elapsedTime <= 1.0f)
+        {
+            Vector3 dest = -targetRect.anchoredPosition;
+            elapsedTime += Time.deltaTime;
+            multiplierCoefficient = Mathf.Exp(elapsedTime) * 0.1f;
+            targetRect.transform.Translate(dest * multiplierCoefficient * Time.deltaTime);
+            yield return null;
+        }
     }
 }
