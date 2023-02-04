@@ -19,13 +19,30 @@ namespace GameManager {
 
 			isInited = true;
 
-			ItemManager.Register("Player", new Item("Player", GameObject.Find("UnitRoot")));
+			/*
+			if (!ItemManager.Register("Player", new Item("Player", GameObject.Find("UnitRoot")))) {
+				Debug.Log("GameManager->failed at Register(Player)");
+			}
 
-			ItemManager.Register("Player/L_Weapon", new Item("Player/L_Weapon", GameObject.Find("L_Weapon")));
+			if (!ItemManager.Register("Player/L_Weapon", new Item("Player/L_Weapon", GameObject.Find("L_Weapon")))) {
+				Debug.Log("GameManager->failed at Register(L_Weapon)");
+			}
 
-			ItemManager.Register("Player/R_Weapon", new Item("Player/R_Weapon", GameObject.Find("R_Weapon")));
+			if (!ItemManager.Register("Player/R_Weapon", new Item("Player/R_Weapon", GameObject.Find("R_Weapon")))) {
+				Debug.Log("GameManager->failed at Register(R_Weapon)");
+			}
 
-			ItemManager.Register("PlayerBaseAttackProjectile", new Item("PlayerBaseAttackProjectile", GameObject.Find("PlayerBaseAttackProjectile")));
+			if (!ItemManager.Register("PlayerBaseAttackProjectile", new Item("PlayerBaseAttackProjectile", GameObject.Find("PlayerBaseAttackProjectile")))) {
+				Debug.Log("GameManager->failed at Register(PlayerBaseAttackProjectile)");
+			}
+			*/
+
+			Debug.Log("GameManager Inited");
+		}
+
+		public static void Clear() {
+			isInited = false;
+			ItemManager.Clear();
 		}
 
 		public static void Pause() {
@@ -40,22 +57,6 @@ namespace GameManager {
 				return;
 
 			isPaused = false;
-		}
-
-		public static void ShowPauseOverlay() {
-			if (isPaused || isPausingOverlay)
-				return;
-
-			isPausingOverlay = true;
-			ItemManager.Find("PauseOverlay").SetActive(true);
-		}
-
-		public static void HidePauseOverlay() {
-			if (!isPaused || !isPausingOverlay)
-				return;
-
-			isPausingOverlay = false;
-			ItemManager.Find("PauseOverlay").SetActive(false);
 		}
 
 		public static bool GetPausedState() {
@@ -95,6 +96,8 @@ namespace GameManager {
 
 			isInited = true;
 			itemMap = new Dictionary<string, Item>();
+
+			Debug.Log("ItemManager Inited");
 		}
 
 		public static void EnsureInited() {
@@ -131,10 +134,20 @@ namespace GameManager {
 		}
 
 		public static GameObject Find(string itemName) {
-			EnsureInited();
-
-			if (itemMap.TryGetValue(itemName, out Item ret) == true) {
-				return ret.GetItemObject();
+			if (itemName == "Player") {
+				return Camera.main.GetComponent<CameraManager>().player;
+			}
+			else if (itemName == "Player/L_Weapon") {
+				return GameObject.Find("L_Weapon");
+			}
+			else if (itemName == "Player/R_Weapon") {
+				return GameObject.Find("R_Weapon");
+			}
+			else if (itemName == "PlayerBaseAttackProjectile") {
+				return GameObject.Find("PlayerBaseAttackProjectile");
+			}
+			else if (itemName == "EnemyRangeAttackProjectile") {
+				return GameObject.Find("EnemyRangeAttackProjectile");
 			}
 
 			return null;
@@ -143,6 +156,7 @@ namespace GameManager {
 		public static void Clear() {
 			EnsureInited();
 
+			isInited = false;
 			itemMap.Clear();
 		}
 	}

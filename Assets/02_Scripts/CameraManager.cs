@@ -4,27 +4,43 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameManager;
 using System.Runtime.CompilerServices;
+using UnityEngine.UIElements;
 
 public class CameraManager : MonoBehaviour {
-	private GameObject player = null;
-	private Camera cameraObject;
+	public GameObject player;
+	public bool isCreated = false;
+	private bool isCameraFixed = false;
+
 	private Vector3 cameraOffset = new Vector3(0.0f, 0.0f, -10.0f);
 	private float smoothCoefficient = 0.15f;
 
-	private void Awake() {
-		cameraObject = GetComponent<Camera>();
+	public CameraManager SetCameraFixed(bool _isCameraFixed) {
+		isCameraFixed = _isCameraFixed;
+		return this;
+	}
+
+	public bool GetCameraFixedState() {
+		return isCameraFixed;
 	}
 
 	private void Start() {
-		GameManager.GameManager.Init();
-		player = ItemManager.Find("Player");
+		if (isCreated) return;
+		isCreated = true;
+
+		GameObject minimapCamera = Managers.Resource.Instantiate("MinimapCamera");
+		if (!Managers.Sound.CheckBgmPlay(Managers.Sound.bgmSound.battleBgm)) {
+			Managers.Sound.Play(Managers.Sound.bgmSound.battleBgm, Define.Sound.Bgm);
+		}
+
+		minimapCamera.AddComponent<CameraManager>();
+		minimapCamera.GetComponent<CameraManager>().isCreated = true;
+		minimapCamera.GetComponent<CameraManager>().player = player;
+		minimapCamera.GetComponent<CameraManager>().isCameraFixed = false;
 	}
 
 	private void Update() {
-		if (player == null) {
-			player = ItemManager.Find("Player");
+		if (isCameraFixed)
 			return;
-		}
 
 		MoveCamera(player.transform.position);
 	}

@@ -15,14 +15,14 @@ namespace Manager
         public bool isFight = false;
 
         public string currentMapType = "";
-        private int _monsterCount = -1;
+        public int _monsterCount = -1;
         public int MonsterCount
         {
             get { return _monsterCount; }
             set
             {
                 _monsterCount = value;
-                if(_monsterCount == 0)
+                if(_monsterCount <= 0)
                 {
                     isFight = false;
                 }

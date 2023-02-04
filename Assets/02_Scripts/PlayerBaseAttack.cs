@@ -15,18 +15,16 @@ public class PlayerBaseAttack : MonoBehaviour {
 	private float weaponDamage;
 	private static bool isValid = false;
 
-	private IEnumerator PlayerFinder()
-	{
-		while (player == null)
-		{
+	private IEnumerator PlayerFinder() {
+		while (player == null) {
 			player = ItemManager.Find("Player");
 			yield return null;
-        }
+		}
 
-        playerControl = player.GetComponent<PlayerControl>();
-        playerWeaponManager = player.GetComponent<PlayerWeaponManager>();
+		playerControl = player.GetComponent<PlayerControl>();
+		playerWeaponManager = player.GetComponent<PlayerWeaponManager>();
 
-        yield break;
+		yield break;
 	}
 
 	private void Start() {
@@ -70,13 +68,13 @@ public class PlayerBaseAttack : MonoBehaviour {
 		int randIdx = Random.Range(0, collisionEnemies.Count);
 		Collider2D collision = collisionEnemies[randIdx];
 		GameObject enemy = collision.gameObject;
-		Enemy enemyControl = enemy.GetComponent<Enemy>();
-		if (enemyControl.isDead)
+		EnemyManager enemyManager = enemy.GetComponent<EnemyManager>();
+		if (enemyManager.GetEnemyDeadState())
 			return;
 
 		isValid = false;
 
-		enemyControl.UpdateHP(enemyControl.HP - weaponDamage);
+		enemyManager.SetEnemyHP(enemyManager.GetEnemyHP() - weaponDamage);
 	}
 
 	private IEnumerator BaseAttackValidationProcess() {

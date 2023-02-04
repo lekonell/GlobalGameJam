@@ -9,8 +9,8 @@ public class SceneManagerEx
     public readonly float WAIT_TIME = 0.5f;
     public float changeSceneDelay = 0.5f;
 
-    public int InGameACount = 3;
-    public int InGameBCount = 3;
+    public int InGameACount = 2;
+    public int InGameBCount = 2;
 
     public BaseScene CurrentScene { get { return GameObject.FindObjectOfType<BaseScene>(); } }
 

@@ -23,7 +23,7 @@ public class PlayerWeaponManager : MonoBehaviour {
 			case PlayerControl.ePlayerWeaponType.WeaponTypeMelee:
 				SetWeaponDamage(54.0f);
 				SetWeaponCooldown(0.6f);
-				
+
 				ItemManager.Find("Player/R_Weapon").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("SPUM/SPUM_Sprites/Packages/Ver300/6_Weapons/New_Weapon_20");
 				break;
 			case PlayerControl.ePlayerWeaponType.WeaponTypeRange:

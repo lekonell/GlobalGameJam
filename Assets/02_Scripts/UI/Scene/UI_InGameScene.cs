@@ -43,7 +43,7 @@ public class UI_InGameScene : UI_Scene
         Bind<Text>(typeof(Texts)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩. 
 
         GetButton((int)Buttons.TestNextButton).gameObject.BindEvent(Managers.GM.OnPortal);
-        GetButton((int)Buttons.TestHit).gameObject.BindEvent(OnClickTestHit);
+        // GetButton((int)Buttons.TestHit).gameObject.BindEvent(OnClickTestHit);
         GetButton((int)Buttons.TestGetGold).gameObject.BindEvent(OnClickTestGetGold);
         GetButton((int)Buttons.TestChangeWeapon).gameObject.BindEvent(OnClickChangeWeapon);
 
@@ -107,8 +107,9 @@ public class UI_InGameScene : UI_Scene
         GetImage((int)Images.HP4).enabled = false;
         GetImage((int)Images.HP5).enabled = false;
 
+        int playerHP = (int)Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().GetPlayerHP();
 
-        switch (Managers.TempPlayer.hp)
+        switch (playerHP)
         {
             case 1:
                 GetImage((int)Images.HP1).enabled = true;
@@ -147,11 +148,14 @@ public class UI_InGameScene : UI_Scene
         UpdateUI();
     }
 
-    void OnClickTestHit(PointerEventData data = default)
-    {
-        Managers.TempPlayer.hp--;
-        if (Managers.TempPlayer.hp == 0)
-            print("다이");
+    public void UpdateUI_PlayerDie(PointerEventData data = default) {
+		int playerHP = (int)Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().GetPlayerHP();
+
+        if (playerHP == 0) {
+            Managers.UI.ShowPopupUI<UI_ShowLoading>();
+            Managers.Scene.LoadScene(Define.Scene.Main, Managers.Scene.changeSceneDelay);
+        }
+
         UpdateUI();
     }
 
