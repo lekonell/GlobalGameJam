@@ -86,12 +86,14 @@ public class UI_InGameScene : UI_Scene
 
     public override void UpdateUI()
     {
-        switch (Managers.TempPlayer.currentWeapon)
+		int playerWeaponType = (int)Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().playerWeaponManager.GetWeaponType();
+
+		switch (playerWeaponType)
         {
-            case "무기1":
+            case 1:
                 GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponBow;
                 break;
-            case "무기2":
+            case 0:
                 GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponSword;
                 break;
             default:

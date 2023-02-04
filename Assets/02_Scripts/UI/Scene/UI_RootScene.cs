@@ -28,12 +28,12 @@ public class UI_RootScene : UI_Scene
     {
         base.Init(); // UI_Button 의 부모인 UI_PopUp 의 Init() 호출
 
-        Bind<GameObject>(typeof(GameObjects)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩. 
+        Bind<GameObject>(typeof(GameObjects)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩.
 
         GetObject((int)GameObjects.Player).GetComponent<Image>().sprite = Resources.Load<Sprite>("SPUM/SPUM_Sprites/Items/6_Weapons/transparent");
 
         realPlayer = GameObject.Find("Player");
-        realPlayer.transform.SetParent(GameObject.Find("UI_RootScene").transform);
+        // realPlayer.transform.SetParent(GameObject.Find("UI_RootScene").transform);
 
 		// realPlayer.transform.SetParent(GetObject((int)GameObjects.Player).transform);
 
