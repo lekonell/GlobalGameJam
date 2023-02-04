@@ -8,11 +8,13 @@ using static UnityEditor.PlayerSettings;
 
 public class UI_TreeScene : UI_Scene
 {
-    public float moveTime;
+    public float bgMoveTime = 4f;
+    public float playerMoveTime = 4f; 
 
     enum GameObjects
     {
         Player,
+        Mover,
     }
 
     enum Buttons
@@ -29,8 +31,17 @@ public class UI_TreeScene : UI_Scene
 
 
         //GetObject((int)GameObjects.Player).transform.DOMove(Vector3.zero, 3);
-        GetObject((int)GameObjects.Player).GetComponent<RectTransform>().DOAnchorPos(Vector3.zero, moveTime);
-        Invoke("ChangeScene", moveTime);
+        StartCoroutine(CoEvent());
+    }
+
+    IEnumerator CoEvent()
+    {
+        yield return new WaitForSeconds(Managers.Scene.changeSceneDelay);
+        GetObject((int)GameObjects.Mover).GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, 0, 0), bgMoveTime);
+        yield return new WaitForSeconds(bgMoveTime);
+        GetObject((int)GameObjects.Player).GetComponent<RectTransform>().DOAnchorPos(Vector3.zero, playerMoveTime);
+        yield return new WaitForSeconds(playerMoveTime);
+        ChangeScene();
     }
 
     void ChangeScene()

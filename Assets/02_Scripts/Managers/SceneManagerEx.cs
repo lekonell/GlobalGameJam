@@ -28,11 +28,21 @@ public class SceneManagerEx
 
     public string GetSceneName(Define.Scene type)
     {
-        string name;
+        string name = "";
         if (type == Define.Scene.InGameA)
-            name = System.Enum.GetName(typeof(Define.Scene), type) + Random.Range(0, InGameACount);
+        {
+            if(Managers.GM.currentFloor == 1 && Managers.GM.currentStage == 0)
+                name = System.Enum.GetName(typeof(Define.Scene), type) + "0";
+            else
+                name = System.Enum.GetName(typeof(Define.Scene), type) + Random.Range(1, InGameACount);
+        }
         else if (type == Define.Scene.InGameB)
-            name = System.Enum.GetName(typeof(Define.Scene), type) + Random.Range(0, InGameBCount);
+        {
+            if (Managers.GM.currentFloor == 4 && Managers.GM.currentStage == 2)
+                name = System.Enum.GetName(typeof(Define.Scene), type) + "0";
+            else
+                name = System.Enum.GetName(typeof(Define.Scene), type) + Random.Range(1, InGameACount);
+        }
         else
             name = System.Enum.GetName(typeof(Define.Scene), type);
 

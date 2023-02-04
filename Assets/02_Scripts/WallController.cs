@@ -20,12 +20,6 @@ public class WallController : MonoBehaviour
     void Update()
     {
         SetTilemap();
-        if(Input.GetKeyDown(KeyCode.Z))
-        {
-            Managers.GM.isFight = !Managers.GM.isFight;
-        }
-
-
     }
 
     public void SetTilemap()

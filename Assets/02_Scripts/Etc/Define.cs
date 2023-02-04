@@ -37,6 +37,7 @@ public class Define
         Root,
         InGameA,
         InGameB,
+        Ending,
     }
 
     public enum Sound

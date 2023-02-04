@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919d603d7ae8069489cd9ad5d70a9280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 1
+  moveTime: 0.5
   sceneChangeDelayTime: 0
 --- !u!1 &7300593397943017426
 GameObject:

@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UI_MainScene : UI_Scene
+public class UI_EndingScene : UI_Scene
 {
     enum Buttons
     {
-        OnStartButton,
+        GoMainButton,
     }
 
     // Start is called before the first frame update
@@ -18,20 +18,15 @@ public class UI_MainScene : UI_Scene
 
         Bind<Button>(typeof(Buttons)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩. 
 
-        GetButton((int)Buttons.OnStartButton).gameObject.BindEvent(LoadStart);
+
+        //GetObject((int)GameObjects.Player).transform.DOMove(Vector3.zero, 3);
+
+        GetButton((int)Buttons.GoMainButton).gameObject.BindEvent(ChangeScene);
     }
 
-    private void Update()
-    {
-    }
-
-    void LoadStart(PointerEventData data = null)
+    void ChangeScene(PointerEventData pointerEventData = null)
     {
         Managers.UI.ShowPopupUI<UI_ShowLoading>();
-
-        Managers.GM.currentFloor = 0;
-        Managers.GM.currentStage = 0;
-        Managers.Scene.LoadScene(Define.Scene.Tree, Managers.Scene.changeSceneDelay);
+        Managers.Scene.LoadScene(Define.Scene.Main, Managers.Scene.changeSceneDelay);
     }
-
 }

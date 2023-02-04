@@ -13,12 +13,12 @@ public class CameraManager : MonoBehaviour {
 
 	private void Awake() {
 		cameraObject = GetComponent<Camera>();
-	}
+	}	
 
 	private void Start() {
 		GameManager.GameManager.Init();
 		player = ItemManager.Find("Player");
-	}
+	}	
 
 	private void Update() {
 		MoveCamera(player.transform.position);
