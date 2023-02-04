@@ -25,6 +25,7 @@ public class UI_MainScene : UI_Scene
     {
         Managers.UI.ShowPopupUI<UI_ShowLoading>();
 
+        Managers.GM.MonsterCount = 0;
         Managers.GM.currentFloor = 0;
         Managers.GM.currentStage = 0;
         Managers.Sound.Play(Managers.Sound.UISound.clickSound);

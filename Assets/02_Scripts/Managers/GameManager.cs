@@ -15,7 +15,7 @@ namespace Manager
         public bool isFight = false;
 
         public string currentMapType = "";
-        public int _monsterCount = -1;
+        private int _monsterCount = -1;
         public int MonsterCount
         {
             get { return _monsterCount; }
@@ -29,6 +29,8 @@ namespace Manager
             }
         }
 
+        public int gold;
+
         //포탈 만났을 때
         public void OnPortal(PointerEventData data = default)
         {
@@ -36,7 +38,7 @@ namespace Manager
 
             Managers.GM.currentStage++;
 
-            if (Managers.GM.currentStage == 3)
+            if (Managers.GM.currentStage == 1)
             {
                 Managers.GM.currentStage = 0;
 

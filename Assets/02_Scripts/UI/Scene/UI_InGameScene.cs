@@ -89,10 +89,10 @@ public class UI_InGameScene : UI_Scene
         switch (Managers.TempPlayer.currentWeapon)
         {
             case "무기1":
-                GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponA;
+                GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponBow;
                 break;
             case "무기2":
-                GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponB;
+                GetImage((int)Images.WeaponImage).sprite = weaponImage.weaponSword;
                 break;
             default:
                 break;
