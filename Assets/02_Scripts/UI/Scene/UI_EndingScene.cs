@@ -11,15 +11,19 @@ public class UI_EndingScene : UI_Scene
         GoMainButton,
     }
 
-    // Start is called before the first frame update
+    enum Texts
+    {
+        GoldText
+    }
+
     void Start()
     {
         base.Init(); // UI_Button 의 부모인 UI_PopUp 의 Init() 호출
 
         Bind<Button>(typeof(Buttons)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩. 
+        Bind<Text>(typeof(Texts)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩. 
 
-
-        //GetObject((int)GameObjects.Player).transform.DOMove(Vector3.zero, 3);
+        GetText((int)Texts.GoldText).text = $"{Managers.GM.gold}";
 
         GetButton((int)Buttons.GoMainButton).gameObject.BindEvent(ChangeScene);
     }
