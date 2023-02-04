@@ -30,7 +30,7 @@ public class UI_MainScene : UI_Scene
     void LoadStart(PointerEventData data = null)
     {
         Managers.UI.ShowPopupUI<UI_ShowLoading>();
-        Managers.Scene.LoadScene(Define.Scene.Root, Managers.Scene.changeSceneDelay);
+        Managers.Scene.LoadScene(Define.Scene.Tree, Managers.Scene.changeSceneDelay);
     }
 
 }

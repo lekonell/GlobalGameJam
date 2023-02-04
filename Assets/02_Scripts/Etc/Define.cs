@@ -33,6 +33,7 @@ public class Define
     {
         Unknown,
         Main,
+        Tree,
         Root,
         InGameA,
         InGameB,
