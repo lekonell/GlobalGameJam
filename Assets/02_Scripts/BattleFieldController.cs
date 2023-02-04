@@ -20,7 +20,7 @@ public class BattleFieldController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +28,7 @@ public class BattleFieldController : MonoBehaviour
         if(collision.gameObject.name == "TempPlayer" || collision.gameObject.name == "UnitRoot")
         {
             Managers.GM.isFight = true;
+            Managers.GM.MonsterCount = enemys.Count;
             foreach (var item in enemys)
             {
                 item.gameObject.SetActive(true);

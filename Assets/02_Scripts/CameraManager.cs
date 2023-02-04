@@ -6,7 +6,7 @@ using GameManager;
 using System.Runtime.CompilerServices;
 
 public class CameraManager : MonoBehaviour {
-	private GameObject player;
+	private GameObject player = null;
 	private Camera cameraObject;
 	private Vector3 cameraOffset = new Vector3(0.0f, 0.0f, -10.0f);
 	private float smoothCoefficient = 0.15f;
@@ -19,10 +19,16 @@ public class CameraManager : MonoBehaviour {
 		GameManager.GameManager.Init();
 		player = ItemManager.Find("Player");
 	}	
-
+	
 	private void Update() {
+		if (player == null)
+		{
+			player = ItemManager.Find("Player");
+			return;
+		}
+
 		MoveCamera(player.transform.position);
-	}
+    }
 
 	public void MoveCamera(Vector3 position) {
 		transform.position = position + cameraOffset;

@@ -14,12 +14,23 @@ public class PlayerBaseAttack : MonoBehaviour {
 
 	private static bool isValid = false;
 
-	private void Start() {
-		player = ItemManager.Find("Player");
-		playerControl = player.GetComponent<PlayerControl>();
-		playerWeaponManager = player.GetComponent<PlayerWeaponManager>();
-		collisionEnemies = new List<Collider2D>();
+	private IEnumerator PlayerFinder()
+	{
+		while (player == null)
+		{
+			player = ItemManager.Find("Player");
+			yield return null;
+        }
 
+        playerControl = player.GetComponent<PlayerControl>();
+        playerWeaponManager = player.GetComponent<PlayerWeaponManager>();
+
+        yield break;
+	}
+
+	private void Start() {
+		StartCoroutine(PlayerFinder());
+		collisionEnemies = new List<Collider2D>();
 		isValid = false;
 	}
 
@@ -47,7 +58,7 @@ public class PlayerBaseAttack : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-		if (!isValid || collisionEnemies.Count == 0)
+		if (player == null || !isValid || collisionEnemies.Count == 0)
 			return;
 
 		int randIdx = Random.Range(0, collisionEnemies.Count);

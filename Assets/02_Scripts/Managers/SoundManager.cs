@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SoundManager
 {
+    public Sc_BgmSound bgmSound;
+
     AudioSource[] _audioSources = new AudioSource[(int)Define.Sound.MaxCount];
     Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
 
@@ -29,6 +31,8 @@ public class SoundManager
 
             _audioSources[(int)Define.Sound.Bgm].loop = true;
         }
+
+        bgmSound = Managers.Resource.Load<Sc_BgmSound>("Scriptable/bgmSound");
     }
 
     public void Clear()
@@ -94,5 +98,19 @@ public class SoundManager
 			Debug.Log($"AudioClip Missing ! {path}");
 
 		return audioClip;
+    }
+
+    public bool CheckBgmPlay(AudioClip clip)
+    {
+        AudioSource audioSource = _audioSources[(int)Define.Sound.Bgm];
+        if (audioSource.isPlaying)
+        {
+            if(audioSource.clip == clip)
+                return true;
+            else
+                return false;
+        }
+
+        return false;
     }
 }

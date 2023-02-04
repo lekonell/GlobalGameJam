@@ -9,6 +9,8 @@ public class RootScene : BaseScene
         base.Init();
 
         SceneType = Define.Scene.InGameA;
+        if (!Managers.Sound.CheckBgmPlay(Managers.Sound.bgmSound.mainBgm))
+            Managers.Sound.Play(Managers.Sound.bgmSound.mainBgm, Define.Sound.Bgm);
 
         Managers.UI.ShowSceneUI<UI_RootScene>();
         Managers.UI.ShowPopupUI<UI_HideLoading>();

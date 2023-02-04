@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class MainScene : BaseScene
 {
-    public AudioClip testClip;
-    public Sc_PlayerSound playerSound;
+    public Sc_BgmSound playerSound;
 
     protected override void Init()
     {
         base.Init();
 
         SceneType = Define.Scene.InGameA;
+        if(!Managers.Sound.CheckBgmPlay(Managers.Sound.bgmSound.mainBgm))
+            Managers.Sound.Play(Managers.Sound.bgmSound.mainBgm, Define.Sound.Bgm);
 
         Managers.UI.ShowSceneUI<UI_MainScene>();
         Managers.UI.ShowPopupUI<UI_HideLoading>();
@@ -21,7 +22,6 @@ public class MainScene : BaseScene
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Managers.Sound.Play(playerSound.A);
         }
     }
 

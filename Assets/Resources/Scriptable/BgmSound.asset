@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53502d448dfddb04da8a214c27862f64, type: 3}
   m_Name: BgmSound
   m_EditorClassIdentifier: 
-  mainBgm: {fileID: 0}
-  battleBgm: {fileID: 0}
+  mainBgm: {fileID: 8300000, guid: 787b6964a016137419de6103b0baaedc, type: 3}
+  battleBgm: {fileID: 8300000, guid: 4643f622627caa84a814f4c341cdabf3, type: 3}

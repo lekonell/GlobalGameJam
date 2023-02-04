@@ -15,6 +15,7 @@ public class UI_TreeScene : UI_Scene
     enum GameObjects
     {
         Player,
+        Tree,
         Mover,
     }
 
@@ -35,14 +36,18 @@ public class UI_TreeScene : UI_Scene
         StartCoroutine(CoEvent());
     }
 
+    bool CoStopper = false;
+
     IEnumerator CoEvent()
     {
         yield return new WaitForSeconds(Managers.Scene.changeSceneDelay);
         GetObject((int)GameObjects.Mover).GetComponent<RectTransform>().DOScale(new Vector3(1, 1, 1), scaleControlTime).SetEase(Ease.InOutSine);
         yield return new WaitForSeconds(bgMoveDelayTime);
         StartCoroutine(SimpleCoroutine());
-        yield return new WaitForSeconds(bgMoveTime);
-        GetObject((int)GameObjects.Player).GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, 150, 0), playerMoveTime);
+        yield return new WaitForSeconds(bgMoveTime - 2.4f);
+        CoStopper = true;
+        GetObject((int)GameObjects.Tree).GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, 600, 0), playerMoveTime);
+        GetObject((int)GameObjects.Player).GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, -50, 0), playerMoveTime);
         yield return new WaitForSeconds(playerMoveTime);
         ChangeScene();
     }
@@ -60,6 +65,8 @@ public class UI_TreeScene : UI_Scene
         float elapsedTime = 0.0f;
         while (elapsedTime <= 2.0f)
         {
+            if (CoStopper == true)
+                yield break;
             Vector3 dest = -targetRect.anchoredPosition;
             elapsedTime += Time.deltaTime;
             multiplierCoefficient = Mathf.Pow(elapsedTime, 2);
@@ -70,6 +77,8 @@ public class UI_TreeScene : UI_Scene
         elapsedTime = 0.0f;
         while (elapsedTime <= 4.0f)
         {
+            if (CoStopper == true)
+                yield break;
             Vector3 dest = -targetRect.anchoredPosition / 1.3f;
             elapsedTime += Time.deltaTime;
             multiplierCoefficient = Mathf.Exp(2.0f * elapsedTime) * 4;
@@ -80,6 +89,8 @@ public class UI_TreeScene : UI_Scene
         elapsedTime = 0.0f;
         while (elapsedTime <= 1.0f)
         {
+            if (CoStopper == true)
+                yield break;
             Vector3 dest = -targetRect.anchoredPosition;
             elapsedTime += Time.deltaTime;
             multiplierCoefficient = Mathf.Exp(elapsedTime) * 0.1f;

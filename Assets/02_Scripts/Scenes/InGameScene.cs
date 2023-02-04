@@ -10,6 +10,11 @@ public class InGameScene : BaseScene
 
         SceneType = Define.Scene.InGameA;
 
+        if (!Managers.Sound.CheckBgmPlay(Managers.Sound.bgmSound.battleBgm))
+        {
+            Managers.Sound.Play(Managers.Sound.bgmSound.battleBgm, Define.Sound.Bgm);
+        }
+
         Managers.UI.ShowSceneUI<UI_InGameScene>();
         Managers.UI.ShowPopupUI<UI_HideLoading>();
     }

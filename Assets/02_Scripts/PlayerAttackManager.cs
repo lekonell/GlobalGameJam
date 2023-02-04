@@ -8,6 +8,8 @@ public class PlayerAttackManager : MonoBehaviour {
 	private bool isValid;
 	private float projectileDamage;
 	private float projectileLifespan;
+	private Vector2 projectileDirection;
+	private float projectileSpeed;
 
 	public PlayerAttackManager SetValid(bool _isValid) {
 		isValid = _isValid;
@@ -25,9 +27,26 @@ public class PlayerAttackManager : MonoBehaviour {
 	public PlayerAttackManager SetLifespan(float _projectileLifespan) {
 		projectileLifespan = _projectileLifespan;
 		return this;
+    }
+
+    public PlayerAttackManager SetSpeed(float _projectileSpeed)
+    {
+        projectileSpeed = _projectileSpeed;
+        return this;
+    }
+
+    public PlayerAttackManager SetDirection(Vector2 _projectileDirection)
+	{
+		projectileDirection = _projectileDirection;
+		return this;
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision) {
+    private void Update()
+    {
+		transform.Translate(projectileDirection * projectileSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
 		if (!isValid || collision.tag != "Enemy")
 			return;
 
