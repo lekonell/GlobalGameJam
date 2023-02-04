@@ -9,6 +9,7 @@ public class UI_MainScene : UI_Scene
     enum Buttons
     {
         OnStartButton,
+        OnCreditButton,
     }
 
     // Start is called before the first frame update
@@ -19,10 +20,7 @@ public class UI_MainScene : UI_Scene
         Bind<Button>(typeof(Buttons)); // 버튼 오브젝트들 가져와 dictionary인 _objects에 바인딩. 
 
         GetButton((int)Buttons.OnStartButton).gameObject.BindEvent(LoadStart);
-    }
-
-    private void Update()
-    {
+        GetButton((int)Buttons.OnCreditButton).gameObject.BindEvent(LoadCredit);
     }
 
     void LoadStart(PointerEventData data = null)
@@ -34,4 +32,9 @@ public class UI_MainScene : UI_Scene
         Managers.Scene.LoadScene(Define.Scene.Tree, Managers.Scene.changeSceneDelay);
     }
 
+    void LoadCredit(PointerEventData data = null)
+    {
+        Managers.UI.ShowPopupUI<UI_ShowLoading>();
+        Managers.Scene.LoadScene(Define.Scene.Credit, Managers.Scene.changeSceneDelay);
+    }
 }

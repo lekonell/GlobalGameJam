@@ -35,6 +35,7 @@ public class Define
         Main,
         Tree,
         Root,
+        Credit,
         InGameA,
         InGameB,
         Ending,
