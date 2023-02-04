@@ -14,8 +14,6 @@ public class UI_RootScene : UI_Scene
         Point1,
         Point2,
         Point3,
-        Point4,
-        Point5,
     }
 
     enum Buttons

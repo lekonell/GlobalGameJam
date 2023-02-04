@@ -992,7 +992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponImage: {fileID: 0}
   currentMapType: A
-  isTest: 0
+  isTest: 1
 --- !u!1 &6171874226639239234
 GameObject:
   m_ObjectHideFlags: 0
