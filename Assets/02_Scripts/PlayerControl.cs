@@ -72,7 +72,7 @@ public class PlayerControl : MonoBehaviour {
 			moveVector = moveVector.normalized;
 			animator.SetFloat("RunState", 0.5f);
 
-			float moveSpeed = 1.0f;
+			float moveSpeed = 4.0f;
 			float moveMultiplier = 1.0f;
 			transform.Translate(moveVector * moveSpeed * moveMultiplier * Time.deltaTime);
 		}

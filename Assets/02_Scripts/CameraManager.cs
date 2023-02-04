@@ -3,26 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameManager;
+using System.Runtime.CompilerServices;
 
 public class CameraManager : MonoBehaviour {
+	private GameObject player;
 	private Camera cameraObject;
 	private Vector3 cameraOffset = new Vector3(0.0f, 0.0f, -10.0f);
 	private float smoothCoefficient = 0.15f;
-
-	private void Start() {
-		GameManager.GameManager.Init();
-	}
 
 	private void Awake() {
 		cameraObject = GetComponent<Camera>();
 	}
 
+	private void Start() {
+		GameManager.GameManager.Init();
+		player = ItemManager.Find("Player");
+	}
+
+	private void Update() {
+		MoveCamera(player.transform.position);
+	}
+
 	public void MoveCamera(Vector3 position) {
-		transform.position = position;
+		transform.position = position + cameraOffset;
 	}
 
 	public void MoveCameraLerp(Vector3 position) {
-		MoveCameraLerp(position, smoothCoefficient);
+		MoveCameraLerp(position + cameraOffset, smoothCoefficient);
 	}
 
 	public void MoveCameraLerp(Vector3 position, float smoothCoefficient) {

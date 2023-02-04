@@ -19,7 +19,7 @@ public class BattleFieldController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("A");
-        if(collision.gameObject.name == "TempPlayer")
+        if(collision.gameObject.name == "TempPlayer" || collision.gameObject.name == "UnitRoot")
         {
             Managers.GM.isFight = true;
             Destroy(gameObject);
