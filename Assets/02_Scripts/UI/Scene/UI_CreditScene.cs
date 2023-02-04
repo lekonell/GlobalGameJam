@@ -22,6 +22,7 @@ public class UI_CreditScene : UI_Scene
 
     void LoadScene(PointerEventData data = null)
     {
+        Managers.Sound.Play(Managers.Sound.UISound.clickSound);
         Managers.UI.ShowPopupUI<UI_ShowLoading>();
         Managers.Scene.LoadScene(Define.Scene.Main, Managers.Scene.changeSceneDelay);
     }

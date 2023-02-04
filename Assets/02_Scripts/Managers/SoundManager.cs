@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundManager
 {
     public Sc_BgmSound bgmSound;
+    public Sc_UISound UISound;
 
     AudioSource[] _audioSources = new AudioSource[(int)Define.Sound.MaxCount];
     Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
@@ -33,6 +34,7 @@ public class SoundManager
         }
 
         bgmSound = Managers.Resource.Load<Sc_BgmSound>("Scriptable/bgmSound");
+        UISound = Managers.Resource.Load<Sc_UISound>("Scriptable/UISound");
     }
 
     public void Clear()

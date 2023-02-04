@@ -26,7 +26,8 @@ public class UI_EndingScene : UI_Scene
 
     void ChangeScene(PointerEventData pointerEventData = null)
     {
+        Managers.Sound.Play(Managers.Sound.UISound.clickSound);
         Managers.UI.ShowPopupUI<UI_ShowLoading>();
-        Managers.Scene.LoadScene(Define.Scene.Main, Managers.Scene.changeSceneDelay);
+        Managers.Scene.LoadScene(Define.Scene.Credit, Managers.Scene.changeSceneDelay);
     }
 }

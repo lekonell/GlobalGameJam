@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MainScene : BaseScene
 {
-    public Sc_BgmSound playerSound;
-
     protected override void Init()
     {
         base.Init();
