@@ -27,8 +27,7 @@ public class PlayerControl : MonoBehaviour {
 
 	public PlayerWeaponManager playerWeaponManager;
 
-	public bool isPlayerBaseAttack = false;
-	private float playerBaseAttackCooldown = 1.0f;
+	private float playerBaseAttackCooldown = 0.6f;
 	private bool isPlayerBaseAttackCooldown = false;
 	private ePlayerDirection playerDirection = ePlayerDirection.DirectionLeft;
 
@@ -129,7 +128,6 @@ public class PlayerControl : MonoBehaviour {
 				animator.SetFloat("NormalState", 0);
 				animator.SetTrigger("Attack");
 				
-				isPlayerBaseAttack = true;
 				ItemManager.Find("Player/L_Weapon").GetComponent<PlayerBaseAttack>().SetValid(true);
 
 				break;
@@ -159,7 +157,6 @@ public class PlayerControl : MonoBehaviour {
 
 	private IEnumerator PlayerBaseAttackCooldownProcess(float cooldown) {
 		yield return new WaitForSeconds(cooldown);
-		isPlayerBaseAttack = false;
 		isPlayerBaseAttackCooldown = false;
 	}
 }

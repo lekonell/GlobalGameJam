@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour {
 		maxHP = 100;
 
 		rigid = GetComponent<Rigidbody2D>();
-		enemySpeed = 3;
+		enemySpeed = 2.0f;
 		AD = 10.0f;
 		Invoke("Think", 5);
 		target = ItemManager.Find("Player");
