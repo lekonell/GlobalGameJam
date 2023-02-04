@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using GameManager;
 using DG.Tweening;
 using static PlayerControl;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour {
 	public Animator animator;
@@ -133,7 +134,13 @@ public class PlayerControl : MonoBehaviour {
 			return;
 		}
 
-		Vector2 moveVector = Vector2.zero;
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "InGameA0" && scene.name != "InGameA1")
+        {
+            return;
+        }
+
+        Vector2 moveVector = Vector2.zero;
 
 		/*
 		 * Root World:
