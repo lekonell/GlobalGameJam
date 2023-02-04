@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 020515d49f5235f48a1b451e4dcfecea, type: 3}
   m_Name: PlayerWeaponImage
   m_EditorClassIdentifier: 
-  weaponA: {fileID: 5902650331669622779, guid: 1bb8d9394563849f790ff55b8cc05dca, type: 3}
-  weaponB: {fileID: 5223213533427645220, guid: 470cfb1e4f7865c40b83d403037c90c9, type: 3}
+  weaponBow: {fileID: 21300000, guid: 4d9087b8e6bed154ca961b3cdc9dfc71, type: 3}
+  weaponSword: {fileID: 21300000, guid: 6eca4b6450420d5488060fc7d39b47b2, type: 3}
