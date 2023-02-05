@@ -142,6 +142,7 @@ public class UI_InGameScene : UI_Scene
 	public List<Sprite> goldSprites;
 	public int[] goldSpritesIndex = new int[2] { 0, 0 };
 	public bool isGoldSpritesInited = false;
+	public int[] spriteCounts = new int[10] { 8, 8, 8, 8, 8, 8, 7, 7, 8, 8 };
 
 	private GameObject digitWrapper = null;
 	private GameObject[] digits = new GameObject[2] { null, null };
@@ -168,7 +169,6 @@ public class UI_InGameScene : UI_Scene
 		digits[1] = digitWrapper.transform.Find("Digit_2").gameObject;
 
 		goldSprites = new List<Sprite>();
-		int[] spriteCounts = new int[10] { 8, 8, 8, 8, 8, 8, 7, 7, 8, 8 };
 		goldSprites.AddRange(Resources.LoadAll<Sprite>("/GoldSprites/"));
 
 		isGoldSpritesInited = true;
@@ -187,16 +187,29 @@ public class UI_InGameScene : UI_Scene
 
 			int diff = int.Parse(sGoldTo.Substring(i, 1)) - int.Parse(sGoldFrom.Substring(i, 1));
 
-			// StartCoroutine(UpdateGoldProcess(i, );
+			StartCoroutine(UpdateGoldProcess(i, goldSpritesIndex[i], int.Parse(sGoldFrom.Substring(i, 1)), int.Parse(sGoldTo.Substring(i, 1))));
 		}
 	}
 
-	public IEnumerator UpdateGoldProcess(int idx, int digitFrom, int digitTo) {
+	public IEnumerator UpdateGoldProcess(int digitidx, int arridx, int digitFrom, int digitTo) {
 		int currentDigit = digitFrom;
+        int accumulatedCount = 0;
+
 		while (currentDigit <= digitTo) {
-			// digits[0].GetComponent<Image>().sprite = goldSprites[];
+			digits[digitidx].GetComponent<Image>().sprite = goldSprites[arridx + accumulatedCount];
+            accumulatedCount += 1;
+
+            if (accumulatedCount >= spriteCounts[currentDigit]) {
+                arridx += accumulatedCount;
+                accumulatedCount = 0;
+                currentDigit += 1;
+            }
+
 			yield return new WaitForSeconds(0.13f);
 		}
+
+        goldSpritesIndex[digitidx] = arridx;
+        yield break;
 	}
 
 	//void OnClickTestGetGold(PointerEventData data = default)

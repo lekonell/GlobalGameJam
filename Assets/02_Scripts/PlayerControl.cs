@@ -47,6 +47,21 @@ public class PlayerControl : MonoBehaviour {
 	private float moveSpeed = 5.0f;
 	private float moveMultiplier = 5.0f;
 
+	private int playerGold = 0;
+
+	public PlayerControl SetPlayerGold(int _playerGold) {
+		int _playerGoldOld = playerGold;
+		playerGold = _playerGold;
+
+		GameObject.Find("UI_InGameScene").GetComponent<UI_InGameScene>().UpdateGold(_playerGoldOld, _playerGold);
+
+		return this;
+	}
+
+	public int GetPlayerGold() {
+		return playerGold;
+	}
+
 	public PlayerControl SetPlayerHP(float _playerHP) {
 		float _playerOldHP = playerHP;
 

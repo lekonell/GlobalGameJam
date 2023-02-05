@@ -124,9 +124,13 @@ public class EnemyManager : MonoBehaviour {
 
 			transform.GetComponent<SpriteRenderer>().material.DOColor(Color.black, destroyTime).OnComplete(() => {
 				Destroy(gameObject);
+
 				if(!gameObject.name.Contains("box"))
 					Managers.GM.MonsterCount -= 1;
-				print(Managers.GM.MonsterCount);
+
+				PlayerControl playerControl = player.GetComponent<PlayerControl>();
+
+				playerControl.SetPlayerGold(playerControl.GetPlayerGold() + 1);
 			});
 		}
 	}
