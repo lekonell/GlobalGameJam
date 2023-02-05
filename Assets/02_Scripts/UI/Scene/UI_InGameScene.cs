@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 public class UI_InGameScene : UI_Scene
 {
@@ -142,10 +143,11 @@ public class UI_InGameScene : UI_Scene
 	public List<Sprite> goldSprites;
 	public int[] goldSpritesIndex = new int[2] { 0, 0 };
 	public bool isGoldSpritesInited = false;
-	public int[] spriteCounts = new int[10] { 8, 8, 8, 8, 8, 8, 7, 7, 8, 8 };
+	public int[] spriteCounts = new int[10] { 8, 8, 8, 8, 8, 8, 7, 9, 7, 8 };
 
 	private GameObject digitWrapper = null;
 	private GameObject[] digits = new GameObject[2] { null, null };
+    private float digitOriginY;
 
 	public void PreloadGoldSprites() {
 		if (isGoldSpritesInited)
@@ -159,8 +161,8 @@ public class UI_InGameScene : UI_Scene
 		 * 28-35: 4->5 | 8
 		 * 36-42: 5->6 | 8
 		 * 42-48: 6->7 | 7
-		 * 48-55: 7->8 | 8
-		 * 55-62: 8->9 | 8
+		 * 48-57: 7->8 | 9
+		 * 57-62: 8->9 | 7
 		 * 62-69: 9->0 | 8
 		 */
 
@@ -168,18 +170,25 @@ public class UI_InGameScene : UI_Scene
 		digits[0] = digitWrapper.transform.Find("Digit_1").gameObject;
 		digits[1] = digitWrapper.transform.Find("Digit_2").gameObject;
 
+        digitOriginY = digits[0].transform.position.y;
+
 		goldSprites = new List<Sprite>();
-		goldSprites.AddRange(Resources.LoadAll<Sprite>("/GoldSprites/"));
+		goldSprites.AddRange(Resources.LoadAll<Sprite>("digits/"));
 
 		isGoldSpritesInited = true;
 	}
 
 	public void UpdateGold(int goldFrom, int goldTo) {
 		PreloadGoldSprites();
-		// int playerGold = Camera.main.GetComponent<CameraManager>().player.GetComponent<PlayerControl>().GetPlayerGold();
 
 		string sGoldFrom = goldFrom.ToString();
 		string sGoldTo = goldTo.ToString();
+
+        if (sGoldFrom.Length == 1)
+            sGoldFrom = "0" + sGoldFrom;
+
+		if (sGoldTo.Length == 1)
+			sGoldTo = "0" + sGoldTo;
 
 		for (int i = 0; i < 2; i++) {
 			if (sGoldFrom.Substring(i, 1) == sGoldTo.Substring(i, 1))
@@ -187,28 +196,33 @@ public class UI_InGameScene : UI_Scene
 
 			int diff = int.Parse(sGoldTo.Substring(i, 1)) - int.Parse(sGoldFrom.Substring(i, 1));
 
-			StartCoroutine(UpdateGoldProcess(i, goldSpritesIndex[i], int.Parse(sGoldFrom.Substring(i, 1)), int.Parse(sGoldTo.Substring(i, 1))));
+			if (diff != 0) {
+                StartCoroutine(UpdateGoldProcess(i, int.Parse(sGoldFrom.Substring(i, 1)), int.Parse(sGoldTo.Substring(i, 1))));
+            }
 		}
 	}
 
-	public IEnumerator UpdateGoldProcess(int digitidx, int arridx, int digitFrom, int digitTo) {
+	public IEnumerator UpdateGoldProcess(int digitidx, int digitFrom, int digitTo) {
 		int currentDigit = digitFrom;
         int accumulatedCount = 0;
 
-		while (currentDigit <= digitTo) {
-			digits[digitidx].GetComponent<Image>().sprite = goldSprites[arridx + accumulatedCount];
+		while (currentDigit < digitTo) {
+			digits[digitidx].GetComponent<Image>().sprite = goldSprites[goldSpritesIndex[digitidx] + accumulatedCount];
             accumulatedCount += 1;
 
             if (accumulatedCount >= spriteCounts[currentDigit]) {
-                arridx += accumulatedCount;
+				goldSpritesIndex[digitidx] += accumulatedCount - 1;
                 accumulatedCount = 0;
                 currentDigit += 1;
             }
 
-			yield return new WaitForSeconds(0.13f);
+			yield return new WaitForSeconds(0.04f);
 		}
 
-        goldSpritesIndex[digitidx] = arridx;
+        int[] positionWeight = new int[10] { 0, 0, 1, 1, 2, 3, 2, 0, 0, 0 };
+
+        digits[digitidx].transform.position = new Vector2(digits[digitidx].transform.position.x, digitOriginY + positionWeight[digitTo]);
+
         yield break;
 	}
 
