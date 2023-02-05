@@ -280,6 +280,11 @@ public class PlayerControl : MonoBehaviour {
 
 					playerProjectile.GetComponent<Rigidbody2D>().velocity = dist * playerProjectileSpeed;
 
+					float rotateAngle = Mathf.Atan2(dist.y, dist.x) * Mathf.Rad2Deg;
+					Quaternion angleAxis = Quaternion.AngleAxis(180 + rotateAngle, Vector3.forward);
+					Quaternion rotation = Quaternion.Slerp(playerProjectile.transform.rotation, angleAxis, 10000 * Time.deltaTime);
+					playerProjectile.transform.rotation = rotation;
+
 					PlayerAttackManager playerAttackManager = playerProjectile.GetComponent<PlayerAttackManager>();
 					playerAttackManager.SetLifespan(1.2f);
 					playerAttackManager.SetValid(true);
