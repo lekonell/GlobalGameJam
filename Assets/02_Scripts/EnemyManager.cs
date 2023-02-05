@@ -94,8 +94,6 @@ public class EnemyManager : MonoBehaviour {
 	}
 
 	public void SetEnemyHP(float _enemyHp) {
-		Debug.Log("SetEnemyHP(" + _enemyHp + ")");
-
 		enemyHP = _enemyHp;
 		if (enemyHP > enemyMaxHP)
 			enemyHP = enemyMaxHP;
@@ -324,7 +322,7 @@ public class EnemyManager : MonoBehaviour {
 
 	private IEnumerator EnemyMeleeAttackProcess() {
 		float elapsedTime = 0.0f;
-		while (elapsedTime <= 0.5f) {
+		while (elapsedTime <= 1.0f) {
 			if (!isPlayerAttackable)
 				yield break;
 

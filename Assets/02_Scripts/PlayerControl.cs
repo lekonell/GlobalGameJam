@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameManager;
 using DG.Tweening;
-using static PlayerControl;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 public class PlayerControl : MonoBehaviour {
 	public Animator animator;
@@ -273,13 +273,15 @@ public class PlayerControl : MonoBehaviour {
 				Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 				Vector2 dist = (inputPosition - playerPosition).normalized;
 
+				const float playerProjectileSpeed = 4.0f;
+
 				transform.DOMove(transform.position, 0.4f).OnComplete(() => {
 					GameObject playerProjectile = Instantiate(ItemManager.Find("PlayerBaseAttackProjectile"), ItemManager.Find("Player/L_Weapon").transform.position, Quaternion.identity);
 
+					playerProjectile.GetComponent<Rigidbody2D>().velocity = dist * playerProjectileSpeed;
+
 					PlayerAttackManager playerAttackManager = playerProjectile.GetComponent<PlayerAttackManager>();
 					playerAttackManager.SetLifespan(1.2f);
-					playerAttackManager.SetDirection(dist);
-					playerAttackManager.SetSpeed(10.0f);
 					playerAttackManager.SetValid(true);
 					playerAttackManager.SetDamage(playerWeaponManager.GetWeaponDamage());
 				});

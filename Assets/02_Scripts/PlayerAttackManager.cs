@@ -43,8 +43,6 @@ public class PlayerAttackManager : MonoBehaviour {
 	private void Update() {
 		if (!isValid)
 			return;
-
-		transform.Translate(projectileDirection * projectileSpeed * Time.deltaTime);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
