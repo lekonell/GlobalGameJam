@@ -143,7 +143,7 @@ public class UI_InGameScene : UI_Scene
 	public List<Sprite> goldSprites;
 	public int[] goldSpritesIndex = new int[2] { 0, 0 };
 	public bool isGoldSpritesInited = false;
-	public int[] spriteCounts = new int[10] { 8, 8, 8, 8, 8, 8, 7, 12, 5, 7 };
+	public int[] spriteCounts = new int[10] { 8, 8, 8, 8, 8, 8, 7, 9, 7, 7 };
 
 	private GameObject digitWrapper = null;
 	private GameObject[] digits = new GameObject[2] { null, null };
@@ -161,12 +161,14 @@ public class UI_InGameScene : UI_Scene
 		 * 28-35: 4->5 | 8
 		 * 36-42: 5->6 | 8
 		 * 42-48: 6->7 | 7
-		 * 48-57: 7->8 | 10
-		 * 57-62: 8->9 | 8
-		 * 62-69: 9->0 | 7
+		 * 48-55: 7->8 | 8
+		 * 56-62: 8->9 | 7
+		 * 62-69: 9->0 | 8
 		 * 
+		 * 7에서 48
 		 * 8에서 55 (7다음 +1)
 		 * 9에서 62
+		 * 0에서 69
 		 */
 
 		digitWrapper = GameObject.Find("DigitWrapper");
@@ -177,10 +179,6 @@ public class UI_InGameScene : UI_Scene
 
 		goldSprites = new List<Sprite>();
 		goldSprites.AddRange(Resources.LoadAll<Sprite>("digits/"));
-
-        for (int i = 0; i < goldSprites.Count; i++) {
-            Debug.Log("goldSprites[" + i + "]: " + goldSprites[i].name);
-        }
 
 		isGoldSpritesInited = true;
 	}
@@ -213,6 +211,9 @@ public class UI_InGameScene : UI_Scene
 		int currentDigit = digitFrom;
         int accumulatedCount = 0;
 
+        if (digitTo == 0)
+            digitTo = 10;
+
 		while (currentDigit < digitTo) {
 			digits[digitidx].GetComponent<Image>().sprite = goldSprites[goldSpritesIndex[digitidx] + accumulatedCount];
             accumulatedCount += 1;
@@ -226,23 +227,19 @@ public class UI_InGameScene : UI_Scene
                 currentDigit += 1;
             }
 
-			yield return new WaitForSeconds(0.04f);
+			yield return new WaitForSeconds(0.02f);
 		}
 
-        Debug.Log("goldSpritesIndex[" + digitidx + "]: " + goldSpritesIndex[digitidx]);
-
         int[] positionWeight = new int[10] { 0, 0, 1, 1, 2, 3, 3, 0, 0, 0 };
+
+        if (digitTo == 10) {
+            goldSpritesIndex[digitidx] = 0;
+        }
 
         digits[digitidx].transform.position = new Vector2(digits[digitidx].transform.position.x, digitOriginY + positionWeight[digitTo]);
 
         yield break;
 	}
-
-	//void OnClickTestGetGold(PointerEventData data = default)
-	//{
-	//    Managers.TempPlayer.gold++;
-	//    UpdateUI();
-	//}
 
 	public void UpdateUI_PlayerDie(PointerEventData data = default)
     {

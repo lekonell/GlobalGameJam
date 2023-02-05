@@ -8,11 +8,8 @@ public class Potal : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            print("dd");
+            Managers.GM.gold += col.GetComponent<PlayerControl>().GetPlayerGold();
             Managers.GM.OnPortal();
-
-
         }
     }
 }
-

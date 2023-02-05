@@ -38,14 +38,14 @@ public class PlayerControl : MonoBehaviour {
 	private float playerHP = 5.0f;
 	private float playerMaxHP = 5.0f;
 
-	private bool isPlayerSuperArmor = true;
+	private bool isPlayerSuperArmor = false;
 	private bool isPlayerStunned = false;
 	private bool isPlayerWeaponChangeCooldown = false;
 	private bool isPlayerBaseAttackCooldown = false;
 	private ePlayerDirection playerDirection = ePlayerDirection.DirectionLeft;
 
 	private float moveSpeed = 5.0f;
-	private float moveMultiplier = 5.0f;
+	private float moveMultiplier = 1.0f;
 
 	private int playerGold = 0;
 
